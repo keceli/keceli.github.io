@@ -1,0 +1,10 @@
+---
+title: "Publications"
+bibliography: publications_keceli.bib
+nocite: "@*" # This tells Quarto to cite all entries in the .bib file
+---
+
+This page lists my publications.
+
+::: {#refs}
+::: 

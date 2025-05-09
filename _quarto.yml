@@ -1,0 +1,40 @@
+project:
+  type: website
+
+website:
+  title: "Murat Keçeli"
+  description: "Assistant Computational Scientist"
+  site-url: "https://keceli.github.io/"
+  page-footer: "© 2024 Murat Keçeli"
+
+  navbar:
+    left:
+      - href: index.qmd
+        text: About Me
+      - href: publications.qmd
+        text: Publications
+      - href: projects.qmd
+        text: Projects
+      - href: talks.qmd
+        text: Talks
+    right:
+      - icon: envelope
+        href: "mailto:keceli@gmail.com"
+      - icon: github
+        href: "https://github.com/keceli"
+      - icon: twitter
+        href: "https://twitter.com/hpc4science"
+      - icon: mortarboard-fill
+        href: "https://scholar.google.com/citations?user=wby3zK0AAAAJ&hl"
+        aria-label: Google Scholar
+
+  google-analytics: "UA-126254017-1"
+
+format:
+  html:
+    theme:
+      - cosmo
+    css: styles.css
+
+
+

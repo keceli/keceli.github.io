@@ -1,0 +1,52 @@
+---
+title: "About Me"
+image: portrait.jpg
+image-alt: "Portrait of Murat Keçeli"
+about:
+  template: jolla
+  image-shape: round # You can also try "rectangle" or omit for default
+  links:
+    - icon: envelope
+      text: Email
+      href: mailto:keceli@gmail.com
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/hpc4science
+    - icon: github
+      text: GitHub
+      href: https://github.com/keceli
+    # Add other links like Google Scholar if desired, e.g.:
+    # - icon: mortarboard-fill # or a more specific icon if you find one
+    #   text: Google Scholar
+    #   href: https://scholar.google.com/citations?user=wby3zK0AAAAJ&hl
+---
+
+I am interested in developing methods and writing codes related to electronic and vibrational structure of molecules and extended systems. 
+Quantum mechanics gives us the formulations required for a quantitative description of the chemical interactions; 
+however, the complexity of these equations grows rapidly with the system size. 
+We need clever algorithms, efficient implementations and powerful computers to be able to solve these equations. 
+There is indeed one more component, *data*,  that can significantly help us in this challenge. 
+High-throughput simulations and experiments provide us big data and the machine learning revolution bring us powerful data analytics tools.
+I believe that complementing formula-driven approaches with data-driven models will allow us to solve the most challenging scientific problems in the 21st century.
+Therefore, I am also interested in designing workflows to generate accurate quantum chemistry data and developing tools to analyze and use the data.
+
+## Interests
+
+- Quantum chemistry
+- Workflows and databases
+- Machine learning
+- Sparse eigensolvers
+- High-performance computing
+- Accurate thermochemistry
+- Anharmonic vibrations
+
+## Education
+
+- **PhD in Chemical Physics**
+  - University of Illinois at Urbana Champaign, 2012
+- **M.Sc. in Physics**
+  - Bilkent University, 2006
+- **B.Sc. in Physics**
+  - Bilkent University, 2004
+
+
