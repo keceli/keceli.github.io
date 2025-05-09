@@ -1,6 +1,6 @@
 ---
 title: "Post With Code"
-author: "Harlow Malloc"
+author: "Murat Keceli"
 date: "2025-05-08"
 categories: [news, code, analysis]
 image: "image.jpg"

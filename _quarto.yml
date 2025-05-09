@@ -3,9 +3,9 @@ project:
 
 website:
   title: "Murat Keçeli"
-  description: "Assistant Computational Scientist"
+  description: "Computational Scientist"
   site-url: "https://keceli.github.io/"
-  page-footer: "© 2024 Murat Keçeli"
+  page-footer: "© 2025 Murat Keçeli"
 
   navbar:
     left:
