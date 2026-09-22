@@ -25,19 +25,17 @@ const orgs = [
   { name: 'petsc', note: 'PETSc agent benchmark' },
   { name: 'VALENCE-software', note: 'valence bond code' },
 ];
-const totalStars = software.reduce((n, s) => n + s.data.stars, 0);
 ---
 
 <BaseLayout title="Software" description="Open-source software by Murat Keçeli: ChemGraph, IQC, HashMol3D, QTC, SIPs eigensolvers, NWChemEx components, HPC chatbots, and more.">
   <PageHead
     eyebrow="Software"
-    title="Open source, by design"
-    lede={`Research code is only useful if others can run it. ${software.length} repositories across ${orgs.length}+ organizations, from a 128,000-atom eigensolver to an LLM agent framework. Everything below is public on GitHub.`}
+    title="Open source, open development"
+    lede={`Open scientific software accelerates discovery by making research reproducible, transparent, reusable, and community-driven. Below you can find ${software.length} repositories across ${orgs.length}+ organizations, from a 128,000-atom eigensolver to an LLM agent framework.`}
   >
     <div class="cluster" style="margin-top:1rem">
       <a class="btn btn-primary btn-sm" href={siteMeta.links.github} rel="noopener"><Icon name="github" /> github.com/keceli</a>
       <a class="btn btn-ghost btn-sm" href={siteMeta.links.asa} rel="noopener">Autonomous Scientific Agents</a>
-      <span class="tag tag-outline">★ {totalStars} combined stars</span>
     </div>
   </PageHead>
 
