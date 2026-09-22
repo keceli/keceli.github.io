@@ -7,7 +7,6 @@ import Icon from '../../components/Icon.astro';
 import { isLive, siteMeta } from '../../data/site';
 
 const software = (await getCollection('software')).sort((a, b) => b.data.stars - a.data.stars || (b.data.commits ?? 0) - (a.data.commits ?? 0));
-const featured = software.filter((s) => s.data.featured);
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
 const themes = Array.from(new Set(software.map((s) => s.data.theme)));
 const byTheme = themes.map((t) => ({
@@ -16,6 +15,7 @@ const byTheme = themes.map((t) => ({
   project: projects.find((p) => software.find((s) => s.data.theme === t)?.data.project === p.slug),
 }));
 const orgs = [
+  { name: 'keceli', note: 'personal repositories: agents, tools, notebooks, utilities' },
   { name: 'argonne-lcf', note: 'ChemGraph, ALCF user guides, HPC assistants' },
   { name: 'Autonomous-Scientific-Agents', note: 'IQC, HashMol3D, chemistry agents' },
   { name: 'NWChemEx', note: 'exascale quantum chemistry software' },
@@ -43,11 +43,18 @@ const orgs = [
     <div class="shell">
       <div class="section-head">
         <div>
-          <span class="eyebrow">Featured</span>
-          <h2>Start with these</h2>
+          <span class="eyebrow">Organizations</span>
+          <h2>Where the code lives</h2>
         </div>
       </div>
-      <div class="grid grid-3">{featured.map((s) => <SoftwareCard item={s} />)}</div>
+      <div class="grid grid-4">
+        {orgs.map((o) => (
+          <a class="card repo" href={`https://github.com/${o.name}`} rel="noopener">
+            <div class="name">{o.name}</div>
+            <p class="small">{o.note}</p>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -83,25 +90,6 @@ const orgs = [
           <div class="grid grid-3">{g.items.map((s) => <SoftwareCard item={s} />)}</div>
         </div>
       ))}
-    </div>
-  </section>
-
-  <section class="section-tight">
-    <div class="shell">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">Organizations</span>
-          <h2>Where the code lives</h2>
-        </div>
-      </div>
-      <div class="grid grid-4">
-        {orgs.map((o) => (
-          <a class="card repo" href={`https://github.com/${o.name}`} rel="noopener">
-            <div class="name">{o.name}</div>
-            <p class="small">{o.note}</p>
-          </a>
-        ))}
-      </div>
     </div>
   </section>
 </BaseLayout>
