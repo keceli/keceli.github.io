@@ -1,0 +1,117 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHead from '../../components/PageHead.astro';
+import PublicationItem from '../../components/PublicationItem.astro';
+import SoftwareCard from '../../components/SoftwareCard.astro';
+import Icon from '../../components/Icon.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((p) => ({ params: { slug: p.slug }, props: { project: p } }));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+const d = project.data;
+
+const allPubs = await getCollection('publications');
+const pubs = allPubs
+  .filter((p) => d.publications.includes(p.slug) || p.data.project === project.slug)
+  .filter((p) => p.data.type !== 'supplement')
+  .sort((a, b) => b.data.year - a.data.year);
+const allSoftware = await getCollection('software');
+const software = allSoftware
+  .filter((s) => d.software.includes(s.slug))
+  .sort((a, b) => d.software.indexOf(a.slug) - d.software.indexOf(b.slug));
+const funding = (await getCollection('funding')).filter((f) => f.data.project === project.slug);
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const idx = projects.findIndex((p) => p.slug === project.slug);
+const prev = projects[(idx - 1 + projects.length) % projects.length];
+const next = projects[(idx + 1) % projects.length];
+---
+
+<BaseLayout title={d.title} description={d.summary} type="article">
+  <PageHead eyebrow={d.tagline} title={d.title} lede={d.summary} crumbs={[{ href: '/', label: 'Home' }, { href: '/research/', label: 'Research' }, { href: `/research/${project.slug}/`, label: d.title }]}>
+    <div class="cluster" style="margin-top:1.2rem">
+      <span class="tag tag-outline">{d.period}</span>
+      {d.tags.map((t) => <span class="tag">{t}</span>)}
+    </div>
+    <div class="cluster" style="margin-top:1rem">
+      {d.links?.repo && <a class="btn btn-ghost btn-sm" href={d.links.repo} rel="noopener"><Icon name="github" /> Code</a>}
+      {d.links?.paper && <a class="btn btn-ghost btn-sm" href={d.links.paper}><Icon name="pdf" /> Key paper</a>}
+      {d.links?.demo && <a class="btn btn-ghost btn-sm" href={d.links.demo} rel="noopener"><Icon name="external" /> Live demo</a>}
+      {d.links?.docs && <a class="btn btn-ghost btn-sm" href={d.links.docs} rel="noopener"><Icon name="external" /> Docs</a>}
+    </div>
+  </PageHead>
+
+  <section class="section-tight">
+    <div class="shell two-col">
+      <article class="prose">
+        <Content />
+      </article>
+      <aside class="stack">
+        {d.forStudents && (
+          <div class="callout">
+            <span class="eyebrow">For students</span>
+            <p>{d.forStudents}</p>
+          </div>
+        )}
+        {d.collaborators.length > 0 && (
+          <div class="card">
+            <h4>Collaborators</h4>
+            <p class="small">{d.collaborators.join(' · ')}</p>
+          </div>
+        )}
+        {funding.length > 0 && (
+          <div class="card">
+            <h4>Related funding</h4>
+            <ul class="small" style="margin:0; padding-left:1.1rem">
+              {funding.map((f) => (
+                <li>
+                  <a href="/cv/#funding">{f.data.title}</a> <span class="muted">({f.data.agency}, {f.data.role})</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </aside>
+    </div>
+  </section>
+
+  {pubs.length > 0 && (
+    <section class="section-tight">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Publications</span>
+            <h2>Papers from this project</h2>
+          </div>
+        </div>
+        <ul class="pub-list">{pubs.map((p) => <PublicationItem pub={p} />)}</ul>
+      </div>
+    </section>
+  )}
+
+  {software.length > 0 && (
+    <section class="section-tight">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Software</span>
+            <h2>Code</h2>
+          </div>
+          <a class="btn btn-ghost btn-sm" href="/software/">All software <Icon name="arrow" /></a>
+        </div>
+        <div class="grid grid-3">{software.map((s) => <SoftwareCard item={s} />)}</div>
+      </div>
+    </section>
+  )}
+
+  <section class="section-tight">
+    <div class="shell" style="display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap">
+      <a class="btn btn-ghost" href={`/research/${prev.slug}/`}>← {prev.data.title}</a>
+      <a class="btn btn-ghost" href={`/research/${next.slug}/`}>{next.data.title} →</a>
+    </div>
+  </section>
+</BaseLayout>

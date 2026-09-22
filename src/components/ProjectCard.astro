@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Icon from './Icon.astro';
+import { isLive } from '../data/site';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+const { project } = Astro.props;
+const d = project.data;
+---
+
+<article class="card project-card">
+  <div class="glyph" aria-hidden="true"><Icon name={d.icon} /></div>
+  <h3>{isLive('research') ? <a class="card-link" href={`/research/${project.slug}/`}>{d.title}</a> : d.title}</h3>
+  <div class="tagline">{d.tagline}</div>
+  <p>{d.summary}</p>
+  <div class="card-meta card-foot">
+    <span>{d.period}</span>
+  </div>
+</article>

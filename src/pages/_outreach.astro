@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHead from '../components/PageHead.astro';
+import Icon from '../components/Icon.astro';
+import { activities } from '../data/cv';
+import { siteMeta } from '../data/site';
+
+const projects = (await getCollection('projects')).filter((p) => p.data.forStudents).sort((a, b) => a.data.order - b.data.order);
+const starters = [
+  { title: 'Run ChemGraph on your laptop', text: 'Install the agent framework, ask it to optimize a molecule with a free machine-learned potential, and read the trace of tool calls it made.', href: 'https://github.com/argonne-lcf/ChemGraph', level: 'Beginner' },
+  { title: 'Explore the IQC Dashboard', text: 'Browse thousands of computed molecules; find where two methods disagree and form a hypothesis about why.', href: 'https://iqc-dashboard.streamlit.app/', level: 'Beginner' },
+  { title: 'Reproduce a phonon dispersion with 2DM-GAP', text: 'Use a published Gaussian approximation potential for graphene or h-BN to compute phonons and compare with the paper.', href: 'https://github.com/AI4Materials/2DM-GAP', level: 'Intermediate' },
+  { title: 'Hash a conformer with HashMol3D', text: 'A small, well-tested pure-NumPy library: read the specification, then try to break the invariance with a rotated or permuted molecule.', href: 'https://github.com/Autonomous-Scientific-Agents/HashMol3D', level: 'Intermediate' },
+  { title: 'Slice a spectrum with SLEPc', text: 'Read the SIPs paper, then solve a small tight-binding eigenproblem with slepc4py and time it as you add processes.', href: '/publications/2016_keceli_sips_eigensolver_dftb/', level: 'Advanced' },
+];
+---
+
+<BaseLayout title="Outreach and Training" description="Outreach, training, and mentoring by Murat Keçeli: DOE Intro to HPC Bootcamp, FireAID, ALCF workshops and INCITE hackathons, Hour of Code, and student programs at Argonne.">
+  <PageHead eyebrow="Outreach and Training" title="Outreach and Training" lede="Training the next generation of computational scientists and bringing high-performance computing to new communities: workshops and hackathons at the Argonne Leadership Computing Facility, DOE bootcamps, student programs, and Hour of Code lessons in local schools.">
+    <div class="cluster" style="margin-top:1rem">
+      <a class="btn btn-primary" href={`mailto:${siteMeta.email}?subject=Student%20inquiry`}><Icon name="mail" /> Email me</a>
+      <a class="btn btn-ghost" href="/research/">Browse projects</a>
+    </div>
+  </PageHead>
+
+  <section class="section-tight">
+    <div class="shell">
+      <div class="grid grid-3">
+        {activities.map((a) => (
+          <article class="card">
+            <span class="small muted">{a.years}</span>
+            <h3>{a.url ? <a class="card-link" href={a.url} rel="noopener">{a.title}</a> : a.title}</h3>
+            <p>{a.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Starter projects</span>
+          <h2>Things you can try this weekend</h2>
+          <p>Each one is a real entry point into a research project on this site.</p>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        {starters.map((s) => (
+          <article class="card card-accent">
+            <span class="tag tag-outline" style="align-self:flex-start">{s.level}</span>
+            <h3><a class="card-link" href={s.href} rel="noopener">{s.title}</a></h3>
+            <p>{s.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">By project</span>
+          <h2>Where a student could contribute</h2>
+        </div>
+      </div>
+      <div class="grid grid-2">
+        {projects.map((p) => (
+          <article class="card">
+            <h3><a class="card-link" href={`/research/${p.slug}/`}>{p.data.title}</a></h3>
+            <p>{p.data.forStudents}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

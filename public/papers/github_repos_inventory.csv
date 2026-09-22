@@ -1,0 +1,84 @@
+full_name,scope,language,stars,created,last_push,commits_by_keceli_public,description,url
+AI4EnergyJustice/Tutorials,org,Jupyter Notebook,2,2023-07-18,2023-08-08,21,Tutorials for AI for Energy Justice project.,https://github.com/AI4EnergyJustice/Tutorials
+AI4Materials/2DM-GAP,org,,5,2023-01-18,2023-10-30,8,Machine learning potentials for Two-Dimensional Materials,https://github.com/AI4Materials/2DM-GAP
+Auto-Mech/MESS,org,C++,28,2019-12-18,2026-02-04,16,"Master Equation system solver for determining (P,T)-dependent phenomenological rate constants",https://github.com/Auto-Mech/MESS
+Auto-Mech/mechdriver,org,Python,4,2019-12-18,2026-04-09,2,Automated workflow routines for calculating theoretical data for reaction mechanisms,https://github.com/Auto-Mech/mechdriver
+Autonomous-Scientific-Agents/AI-tools-for-science,org,TypeScript,0,2026-08-14,2026-08-14,7,AI tools for science,https://github.com/Autonomous-Scientific-Agents/AI-tools-for-science
+Autonomous-Scientific-Agents/HashMol3D,org,Python,1,2026-06-30,2026-09-10,34,,https://github.com/Autonomous-Scientific-Agents/HashMol3D
+Autonomous-Scientific-Agents/IQC,org,Python,6,2024-12-15,2026-09-10,242,Interactive Quantum Chemistry,https://github.com/Autonomous-Scientific-Agents/IQC
+Autonomous-Scientific-Agents/IQC-Dashboard,org,Jupyter Notebook,1,2025-12-04,2026-09-05,67,IQC Dashboard provides nice interactive visualization of the final results from IQC,https://github.com/Autonomous-Scientific-Agents/IQC-Dashboard
+Autonomous-Scientific-Agents/Paper2Code,org,Python,6,2024-09-22,2025-02-09,,Paper2Code is an open-source software project that implements a CrewAI system capable of generating code based on computational science academic papers.,https://github.com/Autonomous-Scientific-Agents/Paper2Code
+Autonomous-Scientific-Agents/PubChemAgent,org,Python,1,2025-07-11,2025-07-11,3,PubChemAgent provides a natural language interface for the PubChem database,https://github.com/Autonomous-Scientific-Agents/PubChemAgent
+Autonomous-Scientific-Agents/chemgraph-leaderboard,org,Python,3,2026-04-13,2026-08-21,,,https://github.com/Autonomous-Scientific-Agents/chemgraph-leaderboard
+NWChemEx-Project/DeveloperTools,org,CMake,0,2017-10-03,2023-09-28,7,Documentation and tools for NWChemEx developers,https://github.com/NWChemEx-Project/DeveloperTools
+NWChemEx/.github,org,Dockerfile,1,2022-02-21,2026-08-12,6,GitHub Settings for the NWChemEx Organization,https://github.com/NWChemEx/.github
+NWChemEx/ChemCache,org,C++,2,2020-09-22,2026-08-07,3,"Basis sets, physical constants, geometries, basically any data you can just look up.",https://github.com/NWChemEx/ChemCache
+NWChemEx/Chemist,org,C++,6,2017-09-29,2026-09-03,72,Library for describing chemical systems,https://github.com/NWChemEx/Chemist
+NWChemEx/Integrals,org,C++,0,2017-12-05,2026-08-24,2,,https://github.com/NWChemEx/Integrals
+NWChemEx/NWChemEx,org,Python,16,2018-01-25,2026-08-11,11,"A top-level, user-focused, conglomerate repo for the NWChemEx project.",https://github.com/NWChemEx/NWChemEx
+NWChemEx/NWXCMake,org,CMake,0,2023-01-04,2026-09-04,18,CMake modules and toolchains for NWChemEx,https://github.com/NWChemEx/NWXCMake
+NWChemEx/ParallelZone,org,C++,0,2021-06-08,2026-08-05,37,"You're travelling through another dimension, a dimension not only of CPUs and threads but of GPUs; a journey into a wondrous land whose boundaries are bandwidth limited. That's the signpost up ahead - your next stop, the ParallelZone!",https://github.com/NWChemEx/ParallelZone
+NWChemEx/PluginPlay,org,C++,13,2017-11-13,2026-08-06,33,An inversion-of-control framework for developing modular scientific software.,https://github.com/NWChemEx/PluginPlay
+NWChemEx/SimDE,org,C++,0,2019-03-14,2026-09-08,30,Software development kit for the NWChemEx Community.,https://github.com/NWChemEx/SimDE
+NWChemEx/TensorWrapper,org,C++,0,2022-01-18,2026-09-03,14,A type-erased wrapper around various tensor backends,https://github.com/NWChemEx/TensorWrapper
+NWChemEx/Utilities,org,C++,0,2017-10-06,2026-08-05,8,"Generic, helpful C++ classes",https://github.com/NWChemEx/Utilities
+PACChem/QTC,org,Python,7,2018-07-23,2020-09-30,334,Quantum Thermochemistry Calculator,https://github.com/PACChem/QTC
+PACChem/RCDriver,org,Python,2,2018-10-22,2019-01-03,1,,https://github.com/PACChem/RCDriver
+RENEWFireAID/FireAidVisual,org,Python,0,2026-03-04,2026-03-04,2,Repo for generating visuals for FireAid datasets,https://github.com/RENEWFireAID/FireAidVisual
+VALENCE-software/VALENCE,org,Fortran,8,2018-10-11,2022-07-07,36,quantum chemistry software,https://github.com/VALENCE-software/VALENCE
+argonne-lcf/ArgoTools,org,Python,1,2024-10-30,2024-12-08,2,A repository for scripts and notebooks to interact with Argo's API demonstrating different use cases.,https://github.com/argonne-lcf/ArgoTools
+argonne-lcf/ChemGraph,org,Python,153,2024-12-17,2026-09-10,283,Agentic framework for computational chemistry and materials science workflows,https://github.com/argonne-lcf/ChemGraph
+argonne-lcf/EigenSolverBenchmark,org,C++,0,2025-05-21,2025-05-22,12,,https://github.com/argonne-lcf/EigenSolverBenchmark
+argonne-lcf/HPCBot,org,Jupyter Notebook,3,2024-06-06,2025-07-02,9,,https://github.com/argonne-lcf/HPCBot
+argonne-lcf/ai-science-training-series,org,Jupyter Notebook,239,2021-09-21,2025-11-11,7,,https://github.com/argonne-lcf/ai-science-training-series
+argonne-lcf/ai-testbed-userdocs,org,HTML,5,2022-03-17,2024-01-22,2,AI-Testbed at ALCF provides an infrastructure for the next-generation of AI-accelerator machines. ,https://github.com/argonne-lcf/ai-testbed-userdocs
+argonne-lcf/balsam,org,Python,85,2018-11-06,2025-06-23,8,High throughput workflows and automation for HPC,https://github.com/argonne-lcf/balsam
+argonne-lcf/drdoc,org,Python,3,2024-12-12,2025-06-25,12,Improve documentation files with large langugage models,https://github.com/argonne-lcf/drdoc
+argonne-lcf/user-guides,org,HTML,31,2021-05-11,2026-09-09,258,ALCF Systems User Documentation,https://github.com/argonne-lcf/user-guides
+globus-labs/mof-generation-at-scale,org,Python,30,2023-07-17,2026-05-30,2,Create new MOFs by combining generative AI and simulation on HPC,https://github.com/globus-labs/mof-generation-at-scale
+jupyter4hpc/ALCF_notebooks,org,Jupyter Notebook,1,2020-08-13,2020-08-13,7,A collection of Jupyter notebooks used by ALCF datascience group members,https://github.com/jupyter4hpc/ALCF_notebooks
+jupyter4hpc/ganymede,org,Jupyter Notebook,1,2020-06-24,2020-08-04,5,A collection of Jupyter notebooks ,https://github.com/jupyter4hpc/ganymede
+keceli/AI-Justice,own,Python,0,2023-06-29,2023-06-29,4,AI-Justice: An innovative Python-based project leveraging large language models for automated scoring of documents,https://github.com/keceli/AI-Justice
+keceli/AITools4Science,own,Python,6,2025-05-17,2025-05-17,9,List of AI tools for productivity that can help scientists,https://github.com/keceli/AITools4Science
+keceli/ArgoAgent,own,Python,4,2025-04-12,2026-01-22,17,A command-line interface for interacting with the Argo API,https://github.com/keceli/ArgoAgent
+keceli/EzGitUp,own,Python,1,2023-09-08,2025-06-12,23,A simple tool to upload files to a repository directly without the need for local git commands.,https://github.com/keceli/EzGitUp
+keceli/IntroductionToHPCBootcamp,own,Jupyter Notebook,3,2025-08-11,2025-08-14,7,Evaluating Large Language Models for HPC Education Project Materials,https://github.com/keceli/IntroductionToHPCBootcamp
+keceli/IodineAgent,own,Python,0,2026-01-31,2026-01-31,1,Chemistry agent,https://github.com/keceli/IodineAgent
+keceli/MLP,own,Dockerfile,0,2021-01-24,2021-01-26,6,Machine Learning Potentials,https://github.com/keceli/MLP
+keceli/MaVi,own,Fortran,0,2018-06-01,2018-06-01,6,,https://github.com/keceli/MaVi
+keceli/NickelAgent,own,Python,0,2026-01-31,2026-01-31,1,Green agent for evaluating chemistry benchmarks,https://github.com/keceli/NickelAgent
+keceli/NinjaParser,own,Python,0,2022-04-14,2022-04-14,3,Read `.ninja_log` files and prints timings for the objects with long build times.,https://github.com/keceli/NinjaParser
+keceli/PyLASH,own,Python,1,2015-04-12,2015-11-30,24,"Python scripts for parsing, plotting, organizing files, etc.",https://github.com/keceli/PyLASH
+keceli/QTC,own,Python,8,2017-05-02,2022-04-18,484,Python modules for quantum thermochemistry calculations.,https://github.com/keceli/QTC
+keceli/README,own,,0,2018-12-12,2020-02-21,9,A repo that holds tips about the tools that I am frequently using,https://github.com/keceli/README
+keceli/SLEPc-SIPs,own,,1,2018-03-17,2018-05-08,13,Shift-and-Invert Parallel spectral transformations eigensolver,https://github.com/keceli/SLEPc-SIPs
+keceli/TorchFFN,own,Python,3,2025-09-17,2025-10-27,12,A PyTorch Implementation of Flood-Filling Networks,https://github.com/keceli/TorchFFN
+keceli/binary-bracelet,own,HTML,0,2026-06-27,2026-06-27,3,Design your binary bracelet!,https://github.com/keceli/binary-bracelet
+keceli/chemdash,own,Jupyter Notebook,0,2018-11-06,2020-02-21,11,,https://github.com/keceli/chemdash
+keceli/container,own,Dockerfile,1,2019-12-19,2023-11-02,14,,https://github.com/keceli/container
+keceli/container_nwchem,own,,0,2018-10-02,2018-10-02,16,NWChem container recipe,https://github.com/keceli/container_nwchem
+keceli/delete,own,,0,2025-06-03,2025-06-03,1,,https://github.com/keceli/delete
+keceli/eigensolvers,own,C++,1,2014-07-29,2015-02-05,16,,https://github.com/keceli/eigensolvers
+keceli/ezHPC,own,HTML,7,2020-10-26,2023-10-30,27,Interactive and simplified high-performance computing with Jupyter notebook,https://github.com/keceli/ezHPC
+keceli/heritage_fest_dinner,own,Python,1,2025-03-14,2026-04-10,6,Tools to prepare dish cards and dinner menu,https://github.com/keceli/heritage_fest_dinner
+keceli/inertia,own,Makefile,0,2023-05-17,2024-02-05,7,Python package to calculate matrix inertia using PETSc and SLEPc,https://github.com/keceli/inertia
+keceli/jupyterhub,own,Jupyter Notebook,0,2019-07-09,2019-07-14,15,Notebooks for ALCF Jupyter Hub.,https://github.com/keceli/jupyterhub
+keceli/keceli.github.io,own,HTML,0,2018-06-23,2025-05-09,3,Murat Keceli's personal website,https://github.com/keceli/keceli.github.io
+keceli/kecelinet,own,Shell,0,2018-06-21,2021-01-27,17,,https://github.com/keceli/kecelinet
+keceli/kiler,own,Python,0,2014-02-18,2023-10-23,63,"Scripts, dot files, etc...",https://github.com/keceli/kiler
+keceli/mopac_container,own,,1,2018-02-07,2018-02-07,8,Singularity container recipe for MOPAC.,https://github.com/keceli/mopac_container
+keceli/mpi_benchmark,own,,1,2018-01-24,2019-06-19,61,Exploring containers for HPC,https://github.com/keceli/mpi_benchmark
+keceli/qetsc_logs,own,Python,0,2016-09-25,2017-05-05,43,"A repo for QETSc log files, parsers and plots.",https://github.com/keceli/qetsc_logs
+keceli/qparser,own,,0,2018-04-24,2018-04-24,1,A package for parsing quantum chemistry output files and for populating a database with extracted results.,https://github.com/keceli/qparser
+keceli/research_notes,own,Jupyter Notebook,0,2024-06-21,2024-06-27,4,"A repo to keep my research notes, links to papers, repos etc.",https://github.com/keceli/research_notes
+keceli/siesta-sips,own,HTML,1,2015-06-15,2017-02-20,6,Quantum chemistry package based on PETSc framework.,https://github.com/keceli/siesta-sips
+keceli/test_actions,own,,0,2022-10-20,2022-11-02,5,Repo to test new features in github actions,https://github.com/keceli/test_actions
+keceli/test_markdown_proofread,own,Makefile,0,2024-11-13,2024-11-14,1,Test repo,https://github.com/keceli/test_markdown_proofread
+keceli/test_subrepo_mainrepo,own,,0,2025-08-13,2025-08-13,1,,https://github.com/keceli/test_subrepo_mainrepo
+keceli/test_subrepo_otherrepo,own,,0,2025-08-13,2025-08-13,1,,https://github.com/keceli/test_subrepo_otherrepo
+keceli/xpyz,own,,0,2025-02-28,2025-02-28,1,Python tools for molecules based on the xyz coordinates,https://github.com/keceli/xpyz
+keceli/zipper,own,,0,2018-07-23,2018-07-23,1,Not so necessary zip module for python,https://github.com/keceli/zipper
+m-a-d-n-e-s-s/madness,org,C++,220,2014-05-23,2026-09-10,30,Multiresolution Adaptive Numerical Environment for Scientific Simulation,https://github.com/m-a-d-n-e-s-s/madness
+petsc/petsc,org,C,539,2013-03-10,2026-09-09,1,Mirror of https://gitlab.com/petsc/petsc,https://github.com/petsc/petsc
+petsc/petscagent-bench,org,Python,6,2025-11-24,2026-09-09,4,An agentified evaluation framework for testing PETSc code generation agents,https://github.com/petsc/petscagent-bench
+qetsc/petSCF,org,Jupyter Notebook,0,2022-08-04,2022-09-16,161,Implementation of self-consistent field (SCF) methods based on PETSc and SLEPc.,https://github.com/qetsc/petSCF

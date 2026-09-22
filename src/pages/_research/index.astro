@@ -1,0 +1,67 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHead from '../../components/PageHead.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import Icon from '../../components/Icon.astro';
+import { pillars } from '../../data/site';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const pubs = await getCollection('publications');
+const software = await getCollection('software');
+const pillarIcons: Record<string, string> = { quantum: 'atom', hpc: 'cpu', ai: 'agent' };
+---
+
+<BaseLayout title="Research" description="Research projects of Murat Keçeli: agentic AI for chemistry, high-throughput quantum chemistry data, automated thermochemistry, machine-learned potentials, parallel eigensolvers, and AI assistants for HPC.">
+  <PageHead
+    eyebrow="Research"
+    title="One goal, three ingredients"
+    lede="Everything here serves a single aim: make accurate molecular and materials simulation fast, automatic, and trustworthy enough that discovery is limited by ideas rather than by setup time."
+  />
+
+  <section class="section-tight">
+    <div class="shell pillars">
+      {pillars.map((p) => (
+        <div class="pillar">
+          <div class="glyph"><Icon name={pillarIcons[p.key]} /></div>
+            <h3>{p.title}</h3>
+          <p class="muted" style="margin:0">{p.text}</p>
+          <div class="pillar-links">
+            <a href={`/publications/?area=${p.key}`}><Icon name="pdf" /> Papers</a>
+            <a href={`/software/?area=${p.key}`}><Icon name="code" /> Code</a>
+        </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Projects</span>
+          <h2>Research projects</h2>
+          <p>{pubs.length} publications and {software.length} repositories are organized under the projects below.</p>
+        </div>
+      </div>
+      <div class="grid grid-3">{projects.map((p) => <ProjectCard project={p} />)}</div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="shell">
+      <div class="callout">
+        <h3>How the pieces fit</h3>
+        <p>
+          <a href="/research/anharmonic-vibrations/">Many-body theory</a> taught me what accurate means.
+          <a href="/research/eigensolvers-exascale-software/">Eigensolvers and exascale software</a> made accuracy affordable at scale.
+          <a href="/research/automated-thermochemistry/">Automated thermochemistry</a> showed that whole mechanisms could be computed without a human in the loop, and
+          <a href="/research/ml-potentials-2d-materials/">machine-learned potentials</a> showed that data can stand in for equations.
+          <a href="/research/photocarboxylation/">Photocarboxylation</a> puts those tools to work on a concrete catalysis problem, and
+          <a href="/research/chemgraph-agents/">autonomous scientific agents</a> hand the entire loop to an AI, while
+          <a href="/research/ai-assistants-hpc/">AI assistants for HPC</a> and <a href="/research/education-outreach/">education</a> bring more people to the machines.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

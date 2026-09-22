@@ -1,0 +1,48 @@
+---
+import { navigation, siteMeta } from '../data/site';
+import Icon from './Icon.astro';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="shell">
+    <div class="cols">
+      <div>
+        <h4>{siteMeta.name}</h4>
+        <p>
+          {siteMeta.title}, {siteMeta.division}, {siteMeta.affiliation}. Combining quantum chemistry,
+          high-performance computing, and AI to accelerate scientific discovery.
+        </p>
+        <div class="cluster">
+          <a class="icon-btn" href={siteMeta.links.github} aria-label="GitHub" rel="me noopener"><Icon name="github" /></a>
+          <a class="icon-btn" href={siteMeta.links.scholar} aria-label="Google Scholar" rel="me noopener"><Icon name="scholar" /></a>
+          <a class="icon-btn" href={siteMeta.links.orcid} aria-label="ORCID" rel="me noopener"><Icon name="orcid" /></a>
+          <a class="icon-btn" href={siteMeta.links.linkedin} aria-label="LinkedIn" rel="me noopener"><Icon name="linkedin" /></a>
+          <a class="icon-btn" href={`mailto:${siteMeta.email}`} aria-label="Email"><Icon name="mail" /></a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          {navigation.slice(1).map((n) => (
+            <li><a href={n.href}>{n.label}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href={siteMeta.links.argonne} rel="noopener">Argonne profile</a></li>
+          <li><a href={siteMeta.links.alcf} rel="noopener">ALCF profile</a></li>
+          <li><a href={siteMeta.links.asa} rel="noopener">Autonomous Scientific Agents</a></li>
+          <li><a href="https://github.com/argonne-lcf/ChemGraph" rel="noopener">ChemGraph on GitHub</a></li>
+          <li><a href="/rss.xml">RSS feed</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© {year} Murat Keçeli. Content is licensed CC BY 4.0 unless noted; code samples MIT.</span>
+      <span>Built with Astro. Views are my own, not those of Argonne National Laboratory or the U.S. DOE.</span>
+    </div>
+  </div>
+</footer>

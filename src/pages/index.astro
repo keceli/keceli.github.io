@@ -1,0 +1,266 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import PublicationItem from '../components/PublicationItem.astro';
+import { isLive, news, pillars, siteMeta } from '../data/site';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const featuredProjects = projects.filter((p) => p.data.featured).slice(0, 6);
+const thisYear = new Date().getFullYear();
+const pubs = (await getCollection('publications'))
+  .filter((p) => p.data.type !== 'supplement' && p.data.year >= thisYear - 1)
+  .sort((a, b) => b.data.year - a.data.year || a.data.title.localeCompare(b.data.title));
+const software = (await getCollection('software')).filter((s) => s.data.featured).sort((a, b) => b.data.stars - a.data.stars).slice(0, 4);
+const posts = (await getCollection('posts')).filter((p) => !p.data.draft).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 2);
+const pillarIcons: Record<string, string> = { quantum: 'atom', hpc: 'cpu', ai: 'agent' };
+---
+
+<BaseLayout>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="shell hero-layout">
+      <span class="eyebrow">Computational Scientist · Argonne National Laboratory</span>
+      <h1>AI, HPC, and Quantum Chemistry</h1>
+      <div class="card card-solid hero-card">
+        <p>Quantum mechanics provides a powerful foundation for predicting molecular and material behavior. Yet applying it to problems such as property prediction, materials design, drug discovery, and reaction chemistry remains challenging because accurate calculations are computationally expensive and chemical spaces are enormous.</p>
+        <p>My research focuses on closing the gap between what our physical models can predict in principle and what we can calculate in practice. I combine artificial intelligence, high-performance computing, and quantum chemistry to tackle challenging problems of the 21st century.</p>
+      </div>
+      <div class="hero-photo">
+        <img src={siteMeta.portrait} alt="Portrait of Murat Keçeli" width="1000" height="866" loading="eager" />
+      </div>
+      <p class="equation"><span class="accent">AI</span> + <span class="accent">HPC</span> + <span class="accent">QC</span> = Accelerated Scientific Discovery</p>
+      <div class="hero-actions">
+        {isLive('research') && <a class="btn btn-primary" href="/research/">Explore the research <Icon name="arrow" /></a>}
+        <a class:list={['btn', isLive('research') ? 'btn-ghost' : 'btn-primary']} href="/publications/">Publications</a>
+        {isLive('outreach') && <a class="btn btn-ghost" href="/outreach/">Outreach &amp; Training</a>}
+      </div>
+    </div>
+  </section>
+
+  <!-- Three pillars -->
+  <section class="section-tight">
+    <div class="shell">
+      <div class="pillars">
+        {pillars.map((p) => (
+          <div class="pillar">
+            <div class="glyph"><Icon name={pillarIcons[p.key]} /></div>
+            <h3>{p.title}</h3>
+            <p class="muted" style="margin:0">{p.text}</p>
+            <div class="pillar-links">
+              <a href={`/publications/?area=${p.key}`}><Icon name="pdf" /> Papers</a>
+              <a href={`/software/?area=${p.key}`}><Icon name="code" /> Code</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured research -->
+  {isLive('research') && (
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Research</span>
+          <h2>Projects that connect theory, software, and machines</h2>
+        </div>
+        <a class="btn btn-ghost btn-sm" href="/research/">All research <Icon name="arrow" /></a>
+      </div>
+      <div class="grid grid-3">
+        {featuredProjects.map((p) => <ProjectCard project={p} />)}
+      </div>
+    </div>
+  </section>
+  )}
+
+  <!-- Selected publications + software -->
+  <section class="section">
+    <div class="shell two-col">
+      <div>
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Recent publications</span>
+            <h2>Papers from the last two years</h2>
+          </div>
+          <a class="btn btn-ghost btn-sm" href="/publications/">All papers <Icon name="arrow" /></a>
+        </div>
+        <ul class="pub-list">
+          {pubs.map((p) => <PublicationItem pub={p} />)}
+        </ul>
+      </div>
+      <div>
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Open source</span>
+            <h2>Software</h2>
+          </div>
+        </div>
+        <div class="stack">
+          {software.map((s) => (
+            <a class="card repo" href={s.data.repo} rel="noopener">
+              <div class="name"><span class="owner">{s.data.fullName.split('/')[0]}/</span>{s.data.title}</div>
+              <p class="small">{s.data.summary.split(';')[0].split('. ')[0]}.</p>
+              <div class="repo-meta">
+                {s.data.language && <span class="lang">{s.data.language}</span>}
+                {s.data.stars > 0 && <span>★ {s.data.stars}</span>}
+              </div>
+            </a>
+          ))}
+          <a class="btn btn-ghost btn-sm" href="/software/" style="justify-self:start">All software <Icon name="arrow" /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Students callout — hidden for now
+  
+  <section class="section-tight">
+    <div class="shell">
+      <div class="callout" style="display:grid; grid-template-columns: 1fr auto; gap:1.5rem; align-items:center">
+        <div>
+          <span class="eyebrow">Students and early-career researchers</span>
+          <h3>Curious about AI, supercomputers, and chemistry? Start here.</h3>
+          <p>
+            Every project on this site has an open-source entry point and a "for students" note. I mentor undergraduates and
+            graduate students through Argonne programs such as the Intro to HPC Bootcamp, SULI, and FireAID.
+          </p>
+        </div>
+        <a class="btn btn-primary" href="/outreach/">Outreach and Training <Icon name="arrow" /></a>
+      </div>
+    </div>
+  </section>
+
+  */}
+
+  <!-- News + notes -->
+  <section class="section">
+    <div class="shell two-col">
+      <div>
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">News</span>
+            <h2>Recent updates</h2>
+          </div>
+        </div>
+        <ul class="news-list">
+          {news.map((n) => (
+            <li>
+              <time datetime={n.date}>{n.date}</time>
+              <span>{n.href ? <a href={n.href}>{n.text}</a> : n.text}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Notes</span>
+            <h2>Writing</h2>
+          </div>
+        </div>
+        <div class="stack">
+          {posts.map((p) => (
+            <article class="card">
+              <span class="small muted">{p.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+              <h3><a class="card-link" href={`/blog/${p.slug}/`}>{p.data.title}</a></h3>
+              <p>{p.data.summary}</p>
+            </article>
+          ))}
+          <a class="btn btn-ghost btn-sm" href="/blog/" style="justify-self:start">All notes <Icon name="arrow" /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Two columns: text on the left, photo on the right. The photo occupies only
+     the row of the blue box, so its height always equals the box height. */
+  .hero-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.6fr);
+    grid-template-rows: auto auto auto auto auto;
+    column-gap: 3rem;
+    align-items: stretch;
+  }
+  .hero-layout > .eyebrow { grid-column: 1; grid-row: 1; }
+  .hero-layout > h1 { grid-column: 1; grid-row: 2; }
+  .hero-layout > .hero-card { grid-column: 1; grid-row: 3; }
+  .hero-layout > .hero-photo { grid-column: 2; grid-row: 3; }
+  .hero-layout > .equation { grid-column: 1; grid-row: 4; }
+  .hero-layout > .hero-actions { grid-column: 1; grid-row: 5; }
+  .hero h1 {
+    font-size: clamp(1.9rem, 3.1vw, 2.5rem);
+    margin-bottom: 1.1rem;
+  }
+  .hero-card {
+    padding: 1.4rem 1.6rem;
+    margin: 0;
+  }
+  .hero-card p {
+    font-size: 1.02rem;
+    line-height: 1.6;
+    margin: 0 0 0.8rem;
+  }
+  .hero-card p:last-child {
+    margin-bottom: 0;
+  }
+  .hero-photo {
+    position: relative;
+    height: 100%;
+    min-height: 220px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 4px solid var(--bg-elev);
+  }
+  .hero-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+  }
+  .equation {
+    font-family: var(--font-serif);
+    font-size: clamp(1.05rem, 1.65vw, 1.4rem);
+    font-weight: 500;
+    margin: 1.2rem 0 1.4rem;
+    color: var(--text);
+  }
+  .equation .accent {
+    color: var(--accent);
+  }
+  .pillar h3 {
+    margin-bottom: 0.7rem;
+  }
+  @media (min-width: 900px) {
+    .hero h1,
+    .equation {
+      white-space: nowrap;
+    }
+  }
+  @media (max-width: 760px) {
+    .hero-layout {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .hero-layout > * {
+      grid-column: 1 !important;
+      grid-row: auto !important;
+    }
+    .hero-photo {
+      height: auto;
+      aspect-ratio: 1000 / 866;
+      max-width: 320px;
+      margin-top: 1rem;
+    }
+    .callout {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

@@ -1,0 +1,120 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHead from '../components/PageHead.astro';
+import Icon from '../components/Icon.astro';
+import { appointments, awards, bookChapters, education, press, service, skills } from '../data/cv';
+import { careerTimeline, siteMeta } from '../data/site';
+
+const pubs = (await getCollection('publications')).filter((p) => p.data.type !== 'supplement');
+const thisYear = new Date().getFullYear();
+const recent = pubs.filter((p) => p.data.year >= thisYear - 1).sort((a, b) => b.data.year - a.data.year);
+const funding = (await getCollection('funding')).sort((a, b) => (a.data.status === b.data.status ? 0 : a.data.status === 'ongoing' ? -1 : 1));
+const talks = await getCollection('talks');
+const software = (await getCollection('software')).filter((s) => s.data.featured);
+---
+
+<BaseLayout title="CV" description="Curriculum vitae of Murat Keçeli, Computational Scientist at Argonne National Laboratory.">
+  <PageHead eyebrow="Curriculum vitae" title={siteMeta.name} lede={`${siteMeta.title}, ${siteMeta.division}, ${siteMeta.affiliation}. ${pubs.length} publications, ${talks.length} talks, ${funding.length} funded projects.`}>
+    <div class="cluster" style="margin-top:1rem">
+      <a class="btn btn-primary" href={siteMeta.cvPdf}><Icon name="download" /> Download PDF</a>
+      <a class="btn btn-ghost" href="/publications/">Full publication list</a>
+    </div>
+  </PageHead>
+
+  <section class="section-tight">
+    <div class="shell two-col">
+      <div class="stack" style="gap:2.5rem">
+        <div>
+          <h2 id="appointments">Appointments</h2>
+          <ul class="rows">{appointments.map((a) => <li><span class="k">{a.period}</span><span><strong>{a.title}</strong><br /><span class="muted">{a.place}</span></span></li>)}</ul>
+        </div>
+        <div>
+          <h2 id="education">Education</h2>
+          <ul class="rows">{education.map((e) => <li><span class="k">{e.year}</span><span><strong>{e.degree}</strong>, {e.place}<br /><span class="muted small">{e.note}</span></span></li>)}</ul>
+        </div>
+        <div>
+          <h2 id="highlights">Research highlights</h2>
+          <ul class="timeline">
+            {careerTimeline.map((c) => (
+              <li>
+                <span class="when">{c.period}</span>
+                <h3>{c.title}</h3>
+                <div class="where">{c.place}</div>
+                <p>{c.summary}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 id="publications">Recent publications</h2>
+          <ol class="small" style="padding-left:1.2rem; display:grid; gap:.5rem">
+            {recent.map((p) => (
+              <li>
+                {p.data.authors.join(', ')}. <a href={`/publications/${p.slug}/`}><em>{p.data.title}</em></a>. {p.data.venue}.
+              </li>
+            ))}
+          </ol>
+          <p class="small"><a href="/publications/">See all {pubs.length} publications →</a></p>
+          <h3>Book chapters</h3>
+          <ul class="small" style="padding-left:1.2rem; display:grid; gap:.4rem">{bookChapters.map((b) => <li>{b}</li>)}</ul>
+        </div>
+        <div>
+          <h2 id="funding">Funding</h2>
+          <ul class="rows">
+            {funding.map((f) => (
+              <li>
+                <span class="k">{f.data.period}</span>
+                <span>
+                  <strong>{f.data.title}</strong><br />
+                  <span class="muted small">{f.data.agency} · {f.data.role} · <span class:list={['tag', 'tag-status', `status-${f.data.status === 'ongoing' ? 'active' : 'ended'}`]}>{f.data.status}</span></span>
+                  <br /><span class="small">{f.data.summary}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 id="awards">Honors and awards</h2>
+          <ul class="rows">{awards.map((a) => <li><span class="k">{a.year}</span><span>{a.text}</span></li>)}</ul>
+        </div>
+        <div>
+          <h2 id="service">Professional service</h2>
+          <ul class="small" style="padding-left:1.2rem; display:grid; gap:.4rem">{service.map((s) => <li>{s}</li>)}</ul>
+        </div>
+      </div>
+
+      <aside class="stack">
+        <div class="card">
+          <h4>Contact</h4>
+          <p class="small"><a href={`mailto:${siteMeta.email}`}>{siteMeta.email}</a><br />{siteMeta.division}<br />{siteMeta.affiliation}<br />{siteMeta.location}</p>
+          <div class="cluster">
+            <a class="tag tag-outline" href={siteMeta.links.orcid} rel="noopener">ORCID</a>
+            <a class="tag tag-outline" href={siteMeta.links.scholar} rel="noopener">Scholar</a>
+            <a class="tag tag-outline" href={siteMeta.links.github} rel="noopener">GitHub</a>
+            <a class="tag tag-outline" href={siteMeta.links.linkedin} rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Skills</h4>
+          {skills.map((g) => (
+            <div style="margin-bottom:.6rem">
+              <div class="small muted" style="margin-bottom:.25rem">{g.group}</div>
+              <div class="cluster">{g.items.map((i) => <span class="tag">{i}</span>)}</div>
+            </div>
+          ))}
+        </div>
+        <div class="card">
+          <h4>Software products</h4>
+          <ul class="small" style="margin:0; padding-left:1.1rem; display:grid; gap:.3rem">
+            {software.map((s) => <li><a href={s.data.repo} rel="noopener">{s.data.title}</a>{s.data.role ? <span class="muted"> — {s.data.role}</span> : null}</li>)}
+          </ul>
+        </div>
+        <div class="card">
+          <h4>In the press</h4>
+          <ul class="small" style="margin:0; padding-left:1.1rem">{press.map((p) => <li><a href={p.url} rel="noopener">{p.title}</a> <span class="muted">({p.outlet}, {p.year})</span></li>)}</ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

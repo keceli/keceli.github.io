@@ -1,9 +1,0 @@
----
-title: "Post With Code"
-author: "Murat Keceli"
-date: "2025-05-08"
-categories: [news, code, analysis]
-image: "image.jpg"
----
-
-This is a post with executable code.

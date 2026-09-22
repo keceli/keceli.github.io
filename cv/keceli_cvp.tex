@@ -1,0 +1,182 @@
+% resume.tex
+%
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003 David J. Grant <dgrant@ieee.org> http://www.davidgrant.ca
+% (c) 2007 Todd C. Miller <Todd.Miller@courtesan.com> http://www.courtesan.com/todd
+%
+%This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/1.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
+
+\documentclass[letterpaper,11pt]{article}
+
+%-----------------------------------------------------------https://www.overleaf.com/project/5bca0582099d6c5c0647ce28
+\usepackage{url}
+\usepackage[pdftex]{hyperref} 
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{bibentry}
+\usepackage{natbib} 
+%\fancypagestyle{plain}{%
+%\fancyhf %clear all headers and footers fields
+%\fancyhead[R]{\thepage} %prints the page number on the right side of the header
+%}
+\hypersetup{ 
+colorlinks,% 
+citecolor=black,% 
+filecolor=black,% 
+linkcolor=black,% 
+urlcolor=black
+} 
+\usepackage[empty]{fullpage}
+\usepackage{color}
+\definecolor{mygrey}{gray}{0.80}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Adjust margins to 0.5in on all sides
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{0.9in}
+%\addtolength{\topmargin}{-0.70in}
+%\addtolength{\topmargin}{0.1in}
+%\addtolength{\textheight}{0.6in}
+\renewcommand{\familydefault}{\sfdefault}
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\subresitem}[2]{\item #2 \vspace{-2pt}}
+\newcommand{\resheading}[1]{{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & #2 \\
+        \textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-5pt}}
+%-----------------------------------------------------------
+%move page numbers to center
+\makeatletter
+\renewcommand*{\ps@plain}{%
+  \let\@mkboth\@gobbletwo
+  \let\@oddhead\@empty
+  \def\@oddfoot{%
+    \reset@font
+    \hfil
+    \thepage
+    % \hfil % removed for aligning to the right
+  }%
+  \let\@evenhead\@empty
+  \let\@evenfoot\@oddfoot
+}
+\makeatother
+\pagestyle{plain}
+%-----------------------------------------------------------
+
+
+% ^.
+\begin{document}
+\center{\textbf{\large Murat Ke\c{c}eli}\\February 2026}
+\begin{tabular*}{7.5in}{l@{\extracolsep{\fill}}r}
+Argonne National Laboratory & \url{http://keceli.github.io} \\
+Computational Science Division & \url{keceli@anl.gov} \\
+9700 S. Cass Avenue
+Lemont, IL 60439  &   +1 630 252 5695 \\
+\end{tabular*}
+\\
+\fancyhead[R]{\thepage}
+
+\resheading{Professional Experience}
+\begin{itemize}
+\item
+    \ressubheading{Argonne National Laboratory }{Lemont, IL}{ Computational Scientist} {Present}
+    % {2018 - Present}
+% \item
+    % \ressubheading{Argonne National Laboratory }{Lemont, IL}{Assistant Computational Scientist} {2018 - 2024}
+%        \begin{itemize}
+%       \resitem {Supervisor: Dr. \href{https://www.alcf.anl.gov/staff-directory/graham-fletcher}{Graham Fletcher (Computational Science Division)}}
+% %      \resitem {Supervisor: Dr. \href{https://www.alcf.anl.gov/staff-directory/venkatram-vishwanath}{Venkatram Vishwanath (Argonne Leadership Computing Facility)}}
+%     \end{itemize}
+
+\item
+    \ressubheading{Argonne National Laboratory }{Lemont, IL}{Postdoctoral Appointee} {2014 - 2018}
+    \begin{itemize}
+      \resitem {Supervisors: Dr. \href{http://www.cse.anl.gov/people/resumes/wagner.pdf}{Albert F. Wagner}, Dr. \href{http://www.anl.gov/profile/stephen-j-klippenstein}{Stephen J. Klippenstein}}
+    \end{itemize}
+\item
+    \ressubheading{Massachusetts Institute of Technology}{Cambridge, MA}{Postdoctoral Associate} {2012 - 2014}
+    \begin{itemize}
+      \resitem {Supervisor: Prof. \href{http://web.mit.edu/greengp}{William H. Green}}
+    \end{itemize}
+
+\end{itemize}
+
+%\vspace{0.1in}
+%\resheading{Summary}
+%Extensive experience with developing and applying analytical and numerical methods to model systems from atomic scale to chemical reactors.
+%Contributed to several interdisciplinary projects
+\resheading{Education}
+\begin{itemize}
+
+\item
+    \ressubheading{University of Illinois at Urbana-Champaign}{Urbana, IL}{Ph.D 
+    in Chemical Physics} {May 2012}
+    \begin{itemize}
+      \resitem {Supervisor: Prof. \href{http://www.scs.illinois.edu/~sohirata/}{So Hirata}}
+      \resitem{Thesis title: Vibrational Many-Body Methods for Molecules and Extended Systems } 
+%      \resitem{Transferred from Physics Department at the University of Florida in 2010 with GPA 3.93/4.00}
+    \end{itemize}
+%\item
+%    \ressubheading{University of Florida}{Gainesville, FL}{Ph.D. candidate
+%    in Physics}{2006 - 2010}
+%    \begin{itemize}
+%      \resitem {Supervisor Professor So Hirata} 
+%    \end{itemize}
+\item
+   \ressubheading{Bilkent University}{Ankara, Turkey}{B.Sc. \& M.Sc. in Physics}{2004 \& 2006}
+    \begin{itemize}
+       \resitem {Supervisor: Prof. \href{http://www.fen.bilkent.edu.tr/~oktel/} {Mehmet \"{O}. Oktel}}
+        \resitem{Thesis title: A Variational Approach to Stationary and Rotating
+        Bose-Einstein Condensates} 
+    \end{itemize} 
+%\item 
+%    \ressubheading{Bilkent University}{Ankara, Turkey}{B.Sc. in
+%    Physics}{2004}
+\end{itemize}
+% \resheading{Research Experience}
+%\input{interests.tex}
+
+
+\input{awards.tex}
+\pagebreak
+\input{funding.tex}
+
+\input{professional_activities.tex}
+%\pagebreak
+
+\input{pubref.tex}
+
+\input{pubbook.tex}
+
+\input{pubother.tex}
+
+%\input{pubcite}
+
+\input{conferences.tex}
+
+\input{software}
+% \resheading{Research Experience}
+%\input{interests.tex}
+\input{exppost.tex}
+%\pagebreak
+\input{expphd.tex}
+\input{expmaster.tex}
+%\input{alcf}
+%\input{pubjournal.tex}
+
+ 
+%\pagebreak
+
+%\input{skills.tex}	
+
+\input{teaching.tex}	
+%\input{references.tex}
+
+\end{document}

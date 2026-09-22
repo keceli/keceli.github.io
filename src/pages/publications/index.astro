@@ -1,0 +1,111 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHead from '../../components/PageHead.astro';
+import PublicationItem from '../../components/PublicationItem.astro';
+import Icon from '../../components/Icon.astro';
+import { siteMeta } from '../../data/site';
+
+const all = (await getCollection('publications')).sort((a, b) => b.data.year - a.data.year || a.data.title.localeCompare(b.data.title));
+const pubs = all.filter((p) => p.data.type !== 'supplement');
+const years = Array.from(new Set(pubs.map((p) => p.data.year))).sort((a, b) => b - a);
+const topics = Array.from(new Set(pubs.map((p) => p.data.topic)));
+const areaOptions = [['ai', 'AI'], ['hpc', 'HPC'], ['quantum', 'QC']];
+---
+
+<BaseLayout title="Publications" description="Publications of Murat Keçeli: agentic AI for chemistry, thermochemistry and kinetics, machine-learned potentials, eigensolvers, and vibrational structure theory.">
+  <PageHead
+    eyebrow="Publications"
+    title="Papers"
+    lede={`${pubs.length} peer-reviewed articles, preprints, and reports from ${years[years.length - 1]} to ${years[0]}. Filter by year or topic, or search across titles, authors, and keywords.`}
+  >
+    <div class="cluster" style="margin-top:1rem">
+      <a class="btn btn-ghost btn-sm" href={siteMeta.links.scholar} rel="noopener"><Icon name="scholar" /> Google Scholar</a>
+      <a class="btn btn-ghost btn-sm" href={siteMeta.links.orcid} rel="noopener"><Icon name="orcid" /> ORCID</a>
+      <a class="btn btn-ghost btn-sm" href="/publications.bib"><Icon name="download" /> BibTeX (all)</a>
+    </div>
+  </PageHead>
+
+  <section class="section-tight" id="all">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">All papers</span>
+          <h2>Complete list</h2>
+        </div>
+      </div>
+      <div class="filters" role="group" aria-label="Filter publications">
+        <label for="f-year">Year</label>
+        <select id="f-year">
+          <option value="">All years</option>
+          {years.map((y) => <option value={y}>{y}</option>)}
+        </select>
+        <label for="f-area">Area</label>
+        <select id="f-area">
+          <option value="">All areas</option>
+          {areaOptions.map(([k, v]) => <option value={k}>{v}</option>)}
+        </select>
+        <label for="f-topic">Topic</label>
+        <select id="f-topic">
+          <option value="">All topics</option>
+          {topics.map((t) => <option value={t}>{t}</option>)}
+        </select>
+        <input id="f-search" type="search" placeholder="Search titles, authors, keywords" aria-label="Search publications" />
+        <span class="filter-count" id="f-count"></span>
+      </div>
+      <div class="chip-row" style="margin-bottom:1.25rem" id="topic-chips">
+        {topics.map((t) => <button class="chip" type="button" data-topic={t} aria-pressed="false">{t}</button>)}
+      </div>
+      <ul class="pub-list" id="pub-list">{pubs.map((p) => <PublicationItem pub={p} />)}</ul>
+      <p class="muted small" style="margin-top:1.5rem">
+        Supplementary materials are attached to their parent papers. Author-accepted PDFs are provided for personal, non-commercial use; please cite the published version.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const year = document.getElementById('f-year') as HTMLSelectElement;
+  const topic = document.getElementById('f-topic') as HTMLSelectElement;
+  const area = document.getElementById('f-area') as HTMLSelectElement;
+    const search = document.getElementById('f-search') as HTMLInputElement;
+  const count = document.getElementById('f-count')!;
+  const items = Array.from(document.querySelectorAll<HTMLElement>('#pub-list .pub'));
+  const chips = Array.from(document.querySelectorAll<HTMLButtonElement>('#topic-chips .chip'));
+
+  function apply() {
+    const q = search.value.trim().toLowerCase();
+    let n = 0;
+    for (const el of items) {
+      const ok =
+        (!year.value || el.dataset.year === year.value) &&
+        (!topic.value || el.dataset.topic === topic.value) &&
+        (!area.value || (el.dataset.areas ?? '').split(' ').includes(area.value)) &&
+        (!q || (el.dataset.search ?? '').includes(q));
+      el.hidden = !ok;
+      if (ok) n++;
+    }
+    count.textContent = `${n} of ${items.length}`;
+    chips.forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.topic === topic.value)));
+    const params = new URLSearchParams();
+    if (year.value) params.set('year', year.value);
+    if (topic.value) params.set('topic', topic.value);
+    if (area.value) params.set('area', area.value);
+    if (q) params.set('q', q);
+    history.replaceState(null, '', params.toString() ? `?${params}#all` : location.pathname);
+  }
+  [year, topic, area].forEach((s) => s.addEventListener('change', apply));
+  search.addEventListener('input', apply);
+  chips.forEach((c) =>
+    c.addEventListener('click', () => {
+      topic.value = topic.value === c.dataset.topic ? '' : c.dataset.topic!;
+      apply();
+    }),
+  );
+  const p = new URLSearchParams(location.search);
+  if (p.get('year')) year.value = p.get('year')!;
+  if (p.get('topic')) topic.value = p.get('topic')!;
+  if (p.get('area')) area.value = p.get('area')!;
+  if (p.get('q')) search.value = p.get('q')!;
+  apply();
+</script>

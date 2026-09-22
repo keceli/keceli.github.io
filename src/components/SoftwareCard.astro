@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Icon from './Icon.astro';
+import { areaLabels } from '../data/site';
+
+interface Props {
+  item: CollectionEntry<'software'>;
+}
+const { item } = Astro.props;
+const d = item.data;
+const [owner, name] = d.fullName.split('/');
+---
+
+<article class="card repo" data-theme-group={d.theme} data-status={d.status} data-areas={d.areas.join(' ')}>
+  <div class="name"><span class="owner">{owner}/</span>{name}</div>
+  <p>{d.summary}</p>
+  <div class="cluster" style="gap:.3rem">{d.areas.map((a) => <span class="tag tag-area">{areaLabels[a]}</span>)}</div>
+  <div class="repo-meta card-foot">
+    {d.language && <span class="lang">{d.language}</span>}
+    {d.stars > 0 && <span>★ {d.stars}</span>}
+    {d.years && <span>{d.years}</span>}
+    {d.role && <span>{d.role}</span>}
+  </div>
+  <a class="card-link" href={d.repo} rel="noopener" aria-label={`${d.fullName} on GitHub`}></a>
+</article>

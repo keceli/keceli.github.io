@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHead from '../components/PageHead.astro';
+import Icon from '../components/Icon.astro';
+
+const talks = (await getCollection('talks')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const years = Array.from(new Set(talks.map((t) => t.data.date.getFullYear()))).sort((a, b) => b - a);
+const invited = talks.filter((t) => t.data.type === 'invited').length;
+const typeLabel: Record<string, string> = { invited: 'Invited', contributed: 'Contributed', webinar: 'Webinar', workshop: 'Workshop', lecture: 'Lecture', poster: 'Poster' };
+---
+
+<BaseLayout title="Talks" description="Invited talks, webinars, workshops, and lectures by Murat Keçeli on AI, HPC, and computational chemistry.">
+  <PageHead eyebrow="Talks" title="Talks, webinars, and lectures" lede={`Slides are available on request; recent ALCF webinars are recorded on the ALCF YouTube channel.`}>
+    <div class="chip-row" style="margin-top:1rem" id="type-chips">
+      {Object.entries(typeLabel).map(([k, v]) => <button class="chip" type="button" data-type={k} aria-pressed="false">{v}</button>)}
+    </div>
+  </PageHead>
+
+  <section class="section-tight">
+    <div class="shell-narrow">
+      {years.map((y) => (
+        <div class="year-group" style="margin-bottom:2.2rem">
+          <h2 style="font-size:1.6rem; color:var(--accent)">{y}</h2>
+          <ul class="timeline">
+            {talks.filter((t) => t.data.date.getFullYear() === y).map((t) => (
+              <li data-type={t.data.type}>
+                <span class="when">{typeLabel[t.data.type]}{t.data.dateLabel && t.data.dateLabel !== String(y) ? ` · ${t.data.dateLabel}` : ''}</span>
+                <h3>{t.data.url ? <a href={t.data.url} rel="noopener">{t.data.title}</a> : t.data.title}</h3>
+                <div class="where">{t.data.event}{t.data.location ? ` · ${t.data.location}` : ''}</div>
+                {t.data.summary && <p>{t.data.summary}</p>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const chips = Array.from(document.querySelectorAll<HTMLButtonElement>('#type-chips .chip'));
+  const items = Array.from(document.querySelectorAll<HTMLElement>('.timeline li'));
+  let active = '';
+  function apply() {
+    items.forEach((li) => (li.hidden = !!active && li.dataset.type !== active));
+    document.querySelectorAll<HTMLElement>('.year-group').forEach((g) => (g.hidden = !g.querySelector('li:not([hidden])')));
+    chips.forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.type === active)));
+  }
+  chips.forEach((c) => c.addEventListener('click', () => { active = active === c.dataset.type ? '' : c.dataset.type!; apply(); }));
+</script>

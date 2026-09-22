@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Icon from './Icon.astro';
+import { areaLabels, isLive } from '../data/site';
+
+interface Props {
+  pub: CollectionEntry<'publications'>;
+  showTopic?: boolean;
+}
+const { pub, showTopic = false } = Astro.props;
+const d = pub.data;
+const me = (a: string) => /ke[çc]eli/i.test(a);
+const typeLabel: Record<string, string> = { preprint: 'Preprint', report: 'Report', review: 'Review', supplement: 'Supplement', conference: 'Conference' };
+const searchText = `${d.title} ${d.authors.join(' ')} ${d.venue} ${d.keywords.join(' ')} ${d.topic}`.toLowerCase();
+---
+
+<li class="pub" data-year={d.year} data-topic={d.topic} data-areas={d.areas.join(' ')} data-search={searchText}>
+  <div class="year">{d.year}</div>
+  <div>
+    <div class="title"><a href={`/publications/${pub.slug}/`}>{d.title}</a></div>
+    <div class="authors">
+      {d.authors.map((a, i) => (
+        <><span class:list={{ me: me(a) }}>{a}</span>{i < d.authors.length - 1 ? ', ' : ''}</>
+      ))}
+    </div>
+    <div class="venue">{d.venue}</div>
+    <div class="links">
+      {d.areas.map((a) => <a class="tag tag-area" href={`/publications/?area=${a}`}>{areaLabels[a]}</a>)}
+      {typeLabel[d.type] && !(d.type === 'preprint' && d.arxiv) && <span class="tag tag-outline">{typeLabel[d.type]}</span>}
+      {showTopic && <span class="tag tag-outline">{d.topic}</span>}
+      {d.doi && <a href={`https://doi.org/${d.doi}`} rel="noopener">DOI</a>}
+      {d.arxiv && <a href={`https://arxiv.org/abs/${d.arxiv}`} rel="noopener">arXiv</a>}
+      {d.pdf && <a href={d.pdf}>PDF</a>}
+      {d.code && <a href={d.code} rel="noopener">Code</a>}
+      {d.project && isLive('research') && <a href={`/research/${d.project}/`}>Project</a>}
+    </div>
+  </div>
+</li>

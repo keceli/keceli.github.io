@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import { isLive } from '../../data/site';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHead from '../../components/PageHead.astro';
+import PublicationItem from '../../components/PublicationItem.astro';
+import Icon from '../../components/Icon.astro';
+
+export async function getStaticPaths() {
+  const pubs = await getCollection('publications');
+  return pubs.map((p) => ({ params: { slug: p.slug }, props: { pub: p } }));
+}
+
+const { pub } = Astro.props;
+const d = pub.data;
+const me = (a: string) => /ke[çc]eli/i.test(a);
+const project = d.project ? (await getCollection('projects')).find((p) => p.slug === d.project) : undefined;
+const related = (await getCollection('publications'))
+  .filter((p) => p.slug !== pub.slug && p.data.type !== 'supplement' && (p.data.project === d.project || p.data.topic === d.topic))
+  .sort((a, b) => b.data.year - a.data.year)
+  .slice(0, 4);
+const supplement = (await getCollection('publications')).find((p) => p.slug === `${pub.slug}_si`);
+const bibKey = pub.slug.replace(/[^a-z0-9]/gi, '_');
+const bib = `@article{${bibKey},\n  title = {${d.title}},\n  author = {${d.authors.join(' and ')}},\n  journal = {${d.venue}},\n  year = {${d.year}}${d.doi ? `,\n  doi = {${d.doi}}` : ''}${d.arxiv ? `,\n  eprint = {${d.arxiv}},\n  archivePrefix = {arXiv}` : ''}\n}`;
+---
+
+<BaseLayout title={d.title} description={d.summary} type="article">
+  <PageHead eyebrow={`${d.topic} · ${d.year}`} title={d.title} crumbs={[{ href: '/', label: 'Home' }, { href: '/publications/', label: 'Publications' }, { href: `/publications/${pub.slug}/`, label: String(d.year) }]}>
+    <p class="lede" style="margin-top:0.5rem">
+      {d.authors.map((a, i) => (
+        <><span class:list={{ me: me(a) }} style={me(a) ? 'font-weight:600;color:var(--text)' : ''}>{a}</span>{i < d.authors.length - 1 ? ', ' : ''}</>
+      ))}
+    </p>
+    <p class="muted" style="font-style:italic">{d.venue}</p>
+    <div class="cluster" style="margin-top:0.8rem">
+      {d.type !== 'journal' && <span class="tag tag-outline">{d.type}</span>}
+      {d.doi && <a class="btn btn-primary btn-sm" href={`https://doi.org/${d.doi}`} rel="noopener"><Icon name="external" /> Publisher (DOI)</a>}
+      {d.arxiv && <a class="btn btn-ghost btn-sm" href={`https://arxiv.org/abs/${d.arxiv}`} rel="noopener"><Icon name="external" /> arXiv</a>}
+      {d.pdf && <a class="btn btn-ghost btn-sm" href={d.pdf}><Icon name="pdf" /> PDF</a>}
+      {supplement?.data.pdf && <a class="btn btn-ghost btn-sm" href={supplement.data.pdf}><Icon name="pdf" /> Supplement</a>}
+      {d.code && <a class="btn btn-ghost btn-sm" href={d.code} rel="noopener"><Icon name="code" /> Code</a>}
+    </div>
+  </PageHead>
+
+  <section class="section-tight">
+    <div class="shell two-col">
+      <div class="prose">
+        <h2 style="margin-top:0">Summary</h2>
+        <p>{d.summary}</p>
+        {d.keywords.length > 0 && (
+          <>
+            <h3>Keywords</h3>
+            <div class="cluster">{d.keywords.map((k) => <a class="tag" href={`/publications/?q=${encodeURIComponent(k)}#all`}>{k}</a>)}</div>
+          </>
+        )}
+        <h3>Cite</h3>
+        <pre><code>{bib}</code></pre>
+      </div>
+      <aside class="stack">
+        {project && isLive('research') && (
+          <div class="card card-accent">
+            <span class="eyebrow">Project</span>
+            <h3><a class="card-link" href={`/research/${project.slug}/`}>{project.data.title}</a></h3>
+            <p>{project.data.tagline}</p>
+          </div>
+        )}
+        {related.length > 0 && (
+          <div class="card">
+            <h4>Related papers</h4>
+            <ul class="small" style="margin:0; padding-left:1.1rem; display:grid; gap:.4rem">
+              {related.map((r) => (
+                <li><a href={`/publications/${r.slug}/`}>{r.data.title}</a> <span class="muted">({r.data.year})</span></li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

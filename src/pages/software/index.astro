@@ -1,0 +1,139 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHead from '../../components/PageHead.astro';
+import SoftwareCard from '../../components/SoftwareCard.astro';
+import Icon from '../../components/Icon.astro';
+import { isLive, siteMeta } from '../../data/site';
+
+const software = (await getCollection('software')).sort((a, b) => b.data.stars - a.data.stars || (b.data.commits ?? 0) - (a.data.commits ?? 0));
+const featured = software.filter((s) => s.data.featured);
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const themes = Array.from(new Set(software.map((s) => s.data.theme)));
+const byTheme = themes.map((t) => ({
+  theme: t,
+  items: software.filter((s) => s.data.theme === t),
+  project: projects.find((p) => software.find((s) => s.data.theme === t)?.data.project === p.slug),
+}));
+const orgs = [
+  { name: 'argonne-lcf', note: 'ChemGraph, ALCF user guides, HPC assistants' },
+  { name: 'Autonomous-Scientific-Agents', note: 'IQC, HashMol3D, chemistry agents' },
+  { name: 'NWChemEx', note: 'exascale quantum chemistry software' },
+  { name: 'PACChem', note: 'automated thermochemistry (QTC)' },
+  { name: 'Auto-Mech', note: 'automated kinetics suite' },
+  { name: 'AI4Materials', note: 'GAP potentials for 2D materials' },
+  { name: 'petsc', note: 'PETSc agent benchmark' },
+  { name: 'VALENCE-software', note: 'valence bond code' },
+];
+const totalStars = software.reduce((n, s) => n + s.data.stars, 0);
+---
+
+<BaseLayout title="Software" description="Open-source software by Murat Keçeli: ChemGraph, IQC, HashMol3D, QTC, SIPs eigensolvers, NWChemEx components, HPC chatbots, and more.">
+  <PageHead
+    eyebrow="Software"
+    title="Open source, by design"
+    lede={`Research code is only useful if others can run it. ${software.length} repositories across ${orgs.length}+ organizations, from a 128,000-atom eigensolver to an LLM agent framework. Everything below is public on GitHub.`}
+  >
+    <div class="cluster" style="margin-top:1rem">
+      <a class="btn btn-primary btn-sm" href={siteMeta.links.github} rel="noopener"><Icon name="github" /> github.com/keceli</a>
+      <a class="btn btn-ghost btn-sm" href={siteMeta.links.asa} rel="noopener">Autonomous Scientific Agents</a>
+      <span class="tag tag-outline">★ {totalStars} combined stars</span>
+    </div>
+  </PageHead>
+
+  <section class="section-tight">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Featured</span>
+          <h2>Start with these</h2>
+        </div>
+      </div>
+      <div class="grid grid-3">{featured.map((s) => <SoftwareCard item={s} />)}</div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="shell">
+      <div class="filters" role="group" aria-label="Filter software">
+        <label for="sw-area">Area</label>
+        <select id="sw-area">
+          <option value="">All areas</option>
+          <option value="ai">AI</option>
+          <option value="hpc">HPC</option>
+          <option value="quantum">QC</option>
+        </select>
+        <label for="sw-status">Status</label>
+        <select id="sw-status">
+          <option value="">All</option>
+          <option value="active">Active</option>
+          <option value="maintained">Maintained</option>
+          <option value="archived">Archived</option>
+        </select>
+        <label for="sw-search">Search</label>
+        <input id="sw-search" type="search" placeholder="e.g. eigensolver, LangGraph, GAP" />
+        <span class="filter-count" id="sw-count"></span>
+      </div>
+      {byTheme.map((g) => (
+        <div class="theme-group" data-theme-name={g.theme} style="margin-bottom:2.5rem">
+          <div class="section-head" style="margin-bottom:1rem">
+            <div>
+              <h3>{g.theme}</h3>
+              {g.project && isLive('research') && <p class="small"><a href={`/research/${g.project.slug}/`}>Project page: {g.project.data.title} →</a></p>}
+            </div>
+          </div>
+          <div class="grid grid-3">{g.items.map((s) => <SoftwareCard item={s} />)}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Organizations</span>
+          <h2>Where the code lives</h2>
+        </div>
+      </div>
+      <div class="grid grid-4">
+        {orgs.map((o) => (
+          <a class="card repo" href={`https://github.com/${o.name}`} rel="noopener">
+            <div class="name">{o.name}</div>
+            <p class="small">{o.note}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const status = document.getElementById('sw-status') as HTMLSelectElement;
+  const area = document.getElementById('sw-area') as HTMLSelectElement;
+  const initial = new URLSearchParams(location.search).get('area');
+  if (initial) area.value = initial;
+  const search = document.getElementById('sw-search') as HTMLInputElement;
+  const count = document.getElementById('sw-count')!;
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('.theme-group .repo'));
+  function apply() {
+    const q = search.value.trim().toLowerCase();
+    const st = status.value;
+    const ar = area.value;
+    let n = 0;
+    for (const c of cards) {
+      const ok = (!st || c.dataset.status === st) && (!ar || (c.dataset.areas ?? '').split(' ').includes(ar)) && (!q || c.textContent!.toLowerCase().includes(q));
+      if (ar) c.hidden = !ok;
+      c.hidden = !ok;
+      if (ok) n++;
+    }
+    document.querySelectorAll<HTMLElement>('.theme-group').forEach((g) => {
+      g.hidden = !g.querySelector('.repo:not([hidden])');
+    });
+    count.textContent = `${n} of ${cards.length} repositories`;
+  }
+  status.addEventListener('change', apply);
+  area.addEventListener('change', apply);
+  search.addEventListener('input', apply);
+  apply();
+</script>

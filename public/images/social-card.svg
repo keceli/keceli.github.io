@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#08111f"/><stop offset=".55" stop-color="#0b2a5b"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient>
+    <linearGradient id="line" x1="0" x2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#93c5fd"/></linearGradient>
+    <radialGradient id="glow"><stop offset="0" stop-color="#38bdf8" stop-opacity=".45"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="960" cy="300" r="300" fill="url(#glow)"/>
+  <g fill="none" stroke="url(#line)" stroke-width="2" opacity=".8">
+    <path d="M820 160 L960 110 L1090 190 L1060 330 L930 400 L800 320 Z M820 160 L930 400 M960 110 L1060 330 M1090 190 L800 320"/>
+  </g>
+  <g fill="#0b2a5b" stroke="#93c5fd" stroke-width="3">
+    <circle cx="820" cy="160" r="14"/><circle cx="960" cy="110" r="12"/><circle cx="1090" cy="190" r="14"/><circle cx="1060" cy="330" r="12"/><circle cx="930" cy="400" r="14"/><circle cx="800" cy="320" r="12"/>
+  </g>
+  <text x="80" y="250" font-family="Georgia, 'Iowan Old Style', serif" font-size="74" fill="#ffffff">Murat Keçeli</text>
+  <text x="80" y="310" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#bfdbfe">Computational Scientist · Argonne National Laboratory</text>
+  <text x="80" y="400" font-family="Georgia, serif" font-size="38" font-style="italic" fill="#e0f2fe">AI + HPC + Quantum Chemistry</text>
+  <text x="80" y="450" font-family="Georgia, serif" font-size="38" font-style="italic" fill="#e0f2fe">= Accelerated Scientific Discovery</text>
+  <text x="80" y="560" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#93c5fd">keceli.github.io</text>
+</svg>

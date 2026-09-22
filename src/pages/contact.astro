@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHead from '../components/PageHead.astro';
+import Icon from '../components/Icon.astro';
+import { isLive, siteMeta } from '../data/site';
+---
+
+<BaseLayout title="Contact" description="Contact Murat Keçeli at Argonne National Laboratory.">
+  <PageHead eyebrow="Contact" title="Let's talk" lede="Collaborations, student inquiries, talk invitations, and questions about any of the software are all welcome. Email is the most reliable way to reach me." />
+  <section class="section-tight">
+    <div class="shell grid grid-3">
+      <a class="card card-accent" href={`mailto:${siteMeta.email}`}>
+        <div class="glyph" style="color:var(--accent)"><Icon name="mail" /></div>
+        <h3>Email</h3>
+        <p>{siteMeta.email}</p>
+      </a>
+      <div class="card">
+        <div class="glyph" style="color:var(--accent)"><Icon name="pin" /></div>
+        <h3>Office</h3>
+        <p>{siteMeta.division}<br />{siteMeta.affiliation}<br />9700 S. Cass Avenue, Lemont, IL 60439</p>
+      </div>
+      <div class="card">
+        <div class="glyph" style="color:var(--accent)"><Icon name="spark" /></div>
+        <h3>Profiles</h3>
+        <div class="cluster">
+          <a class="tag tag-outline" href={siteMeta.links.github} rel="noopener">GitHub</a>
+          <a class="tag tag-outline" href={siteMeta.links.scholar} rel="noopener">Google Scholar</a>
+          <a class="tag tag-outline" href={siteMeta.links.orcid} rel="noopener">ORCID</a>
+          <a class="tag tag-outline" href={siteMeta.links.linkedin} rel="noopener">LinkedIn</a>
+          <a class="tag tag-outline" href={siteMeta.links.argonne} rel="noopener">Argonne</a>
+          <a class="tag tag-outline" href={siteMeta.links.alcf} rel="noopener">ALCF</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-tight">
+    <div class="shell-narrow">
+      <div class="callout">
+        <h3>Students</h3>
+        {isLive('outreach') && <p>If you are a student, please read the <a href="/outreach/">Outreach and Training</a> page first; it lists programs and starter projects, and tells you what to include in your message.</p>}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

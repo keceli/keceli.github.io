@@ -1,0 +1,87 @@
+% resume.tex
+%
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003 David J. Grant <dgrant@ieee.org> http://www.davidgrant.ca
+% (c) 2007 Todd C. Miller <Todd.Miller@courtesan.com> http://www.courtesan.com/todd
+%
+%This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/1.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
+
+\documentclass[letterpaper,11pt]{article}
+
+%-----------------------------------------------------------
+\usepackage{url}
+\usepackage[pdftex]{hyperref} 
+\usepackage{fancyhdr}
+%\fancypagestyle{plain}{%
+%\fancyhf %clear all headers and footers fields
+%\fancyhead[R]{\thepage} %prints the page number on the right side of the header
+%}
+\hypersetup{ 
+colorlinks,% 
+citecolor=black,% 
+filecolor=black,% 
+linkcolor=black,% 
+urlcolor=black
+} 
+\usepackage[empty]{fullpage}
+\usepackage{color}
+\definecolor{mygrey}{gray}{0.80}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Adjust margins to 0.5in on all sides
+\addtolength{\oddsidemargin}{-0.3in}
+\addtolength{\evensidemargin}{-0.3in}
+\addtolength{\textwidth}{0.9in}
+%\addtolength{\topmargin}{-0.70in}
+%\addtolength{\topmargin}{0.1in}
+%\addtolength{\textheight}{0.6in}
+\renewcommand{\familydefault}{\sfdefault}
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\subresitem}[2]{\item #2 \vspace{-2pt}}
+\newcommand{\resheading}[1]{{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & #2 \\
+        \textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+%-----------------------------------------------------------
+%move page numbers to center
+\makeatletter
+\renewcommand*{\ps@plain}{%
+  \let\@mkboth\@gobbletwo
+  \let\@oddhead\@empty
+  \def\@oddfoot{%
+    \reset@font
+    \hfil
+    \thepage
+    % \hfil % removed for aligning to the right
+  }%
+  \let\@evenhead\@empty
+  \let\@evenfoot\@oddfoot
+}
+\makeatother
+\pagestyle{plain}
+%-----------------------------------------------------------
+
+
+\begin{document}
+\center{\textbf{\large Murat Ke\c{c}eli Publications}\\November 2016}
+\begin{tabular*}{7.5in}{l@{\extracolsep{\fill}}r}
+Chemical Sciences and Engineering Division  & \url{keceli@anl.gov} \\
+9700 S. Cass Avenue,
+Argonne, IL 60439  &   1 352 871 0758 \\
+\end{tabular*}
+
+\fancyhead[R]{\thepage}
+
+%\pagebreak
+\input{pubjournal.tex}
+%\pagebreak
+\input{pubbook.tex}
+\input{pubother.tex}
+
+\end{document}

@@ -1,0 +1,85 @@
+---
+import Analytics from '../components/Analytics.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { siteMeta } from '../data/site';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  type?: 'website' | 'article';
+  image?: string;
+}
+
+const { title, description, type = 'website', image = '/images/social-card.svg' } = Astro.props;
+const pageTitle = title ? `${title} · ${siteMeta.name}` : `${siteMeta.name} · ${siteMeta.title}, ${siteMeta.affiliation}`;
+const pageDescription = description ?? siteMeta.description;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(image, Astro.site);
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: siteMeta.name,
+  alternateName: siteMeta.asciiName,
+  jobTitle: siteMeta.title,
+  worksFor: { '@type': 'Organization', name: siteMeta.affiliation },
+  email: `mailto:${siteMeta.email}`,
+  url: siteMeta.links.github.replace('github.com/keceli', 'keceli.github.io'),
+  image: new URL(siteMeta.portrait, Astro.site),
+  sameAs: [siteMeta.links.github, siteMeta.links.scholar, siteMeta.links.orcid, siteMeta.links.linkedin, siteMeta.links.argonne],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title={`${siteMeta.name} — Notes`} href="/rss.xml" />
+    <link rel="sitemap" href="/sitemap.xml" />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={siteMeta.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="theme-color" content="#f4f7fc" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#08111f" media="(prefers-color-scheme: dark)" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap"
+    />
+    <script is:inline>
+      // Apply the stored theme before first paint to avoid a flash.
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored || (prefersDark ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <Analytics />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

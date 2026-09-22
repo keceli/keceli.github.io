@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHead from '../../components/PageHead.astro';
+
+const posts = (await getCollection('posts')).filter((p) => !p.data.draft).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Notes" description="Short notes and essays by Murat Keçeli on AI for science, HPC, and computational chemistry.">
+  <PageHead eyebrow="Notes" title="Notes" lede="Short essays and technical notes on AI for science, scientific software, and computing. Subscribe via RSS.">
+    <a class="btn btn-ghost btn-sm" href="/rss.xml" style="margin-top:1rem">RSS feed</a>
+  </PageHead>
+  <section class="section-tight">
+    <div class="shell-narrow stack">
+      {posts.map((p) => (
+        <article class="card">
+          <span class="small muted">{p.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+          <h3><a class="card-link" href={`/blog/${p.slug}/`}>{p.data.title}</a></h3>
+          <p>{p.data.summary}</p>
+          <div class="cluster">{p.data.tags.map((t) => <span class="tag tag-outline">{t}</span>)}</div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

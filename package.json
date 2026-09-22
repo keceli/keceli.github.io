@@ -1,0 +1,17 @@
+{
+  "name": "murat-keceli-personal-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "content": "python3 scripts/generate_content.py",
+    "linkcheck": "python3 scripts/check_links.py"
+  },
+  "dependencies": {
+    "astro": "^5.5.0"
+  }
+}
