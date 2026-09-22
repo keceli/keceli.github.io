@@ -8,7 +8,23 @@ import { isLive, siteMeta } from '../../data/site';
 
 const software = (await getCollection('software')).sort((a, b) => b.data.stars - a.data.stars || (b.data.commits ?? 0) - (a.data.commits ?? 0));
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
-const themes = Array.from(new Set(software.map((s) => s.data.theme)));
+// Display order of theme groups (prefix match on the catalog theme names); unlisted themes follow alphabetically.
+const themeOrder = [
+  'Agentic AI',
+  'AI assistants',
+  'Interactive Quantum Chemistry',
+  'Automated thermochemistry',
+  'Machine-learning interatomic potentials',
+  'Parallel eigensolvers',
+  'Education',
+  'Neuroscience',
+  'HPC usability',
+];
+const rank = (t: string) => {
+  const i = themeOrder.findIndex((k) => t.startsWith(k));
+  return i === -1 ? themeOrder.length : i;
+};
+const themes = Array.from(new Set(software.map((s) => s.data.theme))).sort((a, b) => rank(a) - rank(b) || a.localeCompare(b));
 const byTheme = themes.map((t) => ({
   theme: t,
   items: software.filter((s) => s.data.theme === t),
