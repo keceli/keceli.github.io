@@ -86,7 +86,7 @@ Then in the repository settings → Pages, set **Source: GitHub Actions**. The f
 
 **B. Keep a differently named repository (e.g. `research-hub`).** Set `base: '/research-hub'` in `astro.config.mjs`, change `site` to `https://keceli.github.io`, and prefix internal links with `import.meta.env.BASE_URL` — or simpler, add a custom domain. Option A avoids all of this.
 
-Analytics: set a repository variable `PUBLIC_GA_MEASUREMENT_ID` to enable Google Analytics (see `src/components/Analytics.astro`); leave it unset for no tracking.
+Analytics: the site uses [GoatCounter](https://www.goatcounter.com/) (cookie-free, no consent banner). Set the repository variable `PUBLIC_GOATCOUNTER_CODE` to your GoatCounter site code (the `<code>` in `<code>.goatcounter.com`); the dashboard lives at `https://<code>.goatcounter.com`. `PUBLIC_GA_MEASUREMENT_ID` still enables Google Analytics if ever wanted. Both are read at build time in `src/components/Analytics.astro`; leave them unset for no tracking.
 
 ## Repository size note
 

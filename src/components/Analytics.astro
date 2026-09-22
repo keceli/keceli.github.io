@@ -1,6 +1,22 @@
 ---
+// Analytics are opt-in via build-time variables set as GitHub repository variables
+// (Settings → Secrets and variables → Actions → Variables). Nothing is loaded when unset.
+//   PUBLIC_GOATCOUNTER_CODE  — GoatCounter site code, e.g. "keceli" for keceli.goatcounter.com (cookie-free, no consent banner)
+//   PUBLIC_GA_MEASUREMENT_ID — Google Analytics 4 measurement ID, e.g. "G-XXXXXXXXXX" (sets cookies; needs consent in the EU)
+const goatcounterCode = import.meta.env.PUBLIC_GOATCOUNTER_CODE;
 const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 ---
+
+{
+  goatcounterCode ? (
+    <script
+      is:inline
+      data-goatcounter={`https://${goatcounterCode}.goatcounter.com/count`}
+      async
+      src="https://gc.zgo.at/count.js"
+    ></script>
+  ) : null
+}
 
 {
   measurementId ? (
