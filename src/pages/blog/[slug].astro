@@ -13,7 +13,7 @@ const d = post.data;
 ---
 
 <BaseLayout title={d.title} description={d.summary} type="article">
-  <PageHead eyebrow={d.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} title={d.title} lede={d.summary} crumbs={[{ href: '/', label: 'Home' }, { href: '/blog/', label: 'Notes' }, { href: `/blog/${post.slug}/`, label: d.title }]}>
+  <PageHead eyebrow={d.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })} title={d.title} lede={d.summary} crumbs={[{ href: '/', label: 'Home' }, { href: '/blog/', label: 'Notes' }, { href: `/blog/${post.slug}/`, label: d.title }]}>
     <div class="cluster" style="margin-top:.8rem">{d.tags.map((t) => <span class="tag tag-outline">{t}</span>)}</div>
   </PageHead>
   <section class="section-tight">

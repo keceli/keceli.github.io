@@ -1303,3 +1303,16 @@ a.tag-area:hover {
 [hidden] {
   display: none !important;
 }
+
+.prose img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  margin: 0 0 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.prose sup {
+  font-size: 0.7em;
+}

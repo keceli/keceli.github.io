@@ -14,7 +14,7 @@ const posts = (await getCollection('posts')).filter((p) => !p.data.draft).sort((
     <div class="shell-narrow stack">
       {posts.map((p) => (
         <article class="card">
-          <span class="small muted">{p.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+          <span class="small muted">{p.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</span>
           <h3><a class="card-link" href={`/blog/${p.slug}/`}>{p.data.title}</a></h3>
           <p>{p.data.summary}</p>
           <div class="cluster">{p.data.tags.map((t) => <span class="tag tag-outline">{t}</span>)}</div>

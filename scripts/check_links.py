@@ -21,6 +21,8 @@ issues = []
 for pg in pages:
     s = open(pg, encoding="utf-8").read()
     rel = os.path.relpath(pg, DIST)
+    if "<html" not in s:  # verification stubs and other non-page files
+        continue
     for m in re.finditer(r'(?:href|src)="([^"]+)"', s):
         u = m.group(1)
         if u.startswith(("http", "mailto:", "#", "data:")):
