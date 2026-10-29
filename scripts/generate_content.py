@@ -44,6 +44,8 @@ TOPICS = {
 # stem: (project slug, topic key, featured, type)
 PAPER_MAP = {
     "2026_pham_chemgraph": ("chemgraph-agents", "agents", True, "journal"),
+    "2026_yan_nanocarbons_extreme_conditions": ("ml-potentials-2d-materials", "mlp", True, "journal"),
+    "2026_elliott_nickel_oxidative_addition_ml": ("photocarboxylation", "materials", True, "preprint"),
     "2026_pham_multiagent_materials_screening": ("chemgraph-agents", "agents", True, "preprint"),
     "2026_grizzi_chemgraph_xanes": ("chemgraph-agents", "agents", False, "preprint"),
     "2026_tummalapalli_ensemblelauncher": ("chemgraph-agents", "agents", False, "preprint"),
@@ -114,6 +116,8 @@ TOPIC_AREAS = {
     "bec": ["quantum"],
 }
 PAPER_AREAS = {
+    "2026_yan_nanocarbons_extreme_conditions": ["ai", "hpc", "quantum"],
+    "2026_elliott_nickel_oxidative_addition_ml": ["ai", "hpc", "quantum"],
     "2026_tummalapalli_ensemblelauncher": ["hpc", "ai"],
     "2026_roy_llm_hackathon_materials_chemistry": ["ai", "quantum"],
     "2025_wen_red_teaming_generative_ai_copyright": ["ai"],
@@ -235,7 +239,8 @@ def write_publications(dry: bool):
             fm.append(f"doi: {yaml_str(doi.group(1).rstrip(','))}")
         if arxiv:
             fm.append(f"arxiv: {yaml_str(arxiv.group(1))}")
-        fm.append(f"pdf: {yaml_str('/papers/' + stem + '.pdf')}")
+        if (ROOT / 'public/papers' / f'{stem}.pdf').exists():
+            fm.append(f"pdf: {yaml_str('/papers/' + stem + '.pdf')}")
         if stem in PAPER_CODE:
             fm.append(f"code: {yaml_str(PAPER_CODE[stem])}")
         if project:

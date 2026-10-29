@@ -8,6 +8,20 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 
 ## 2026
 
+### `2026_elliott_nickel_oxidative_addition_ml.pdf`
+- **Title:** Data-Driven Discovery of Structure–Reactivity Relationships in Oxidative Addition at Zerovalent Nickel Centers
+- **Authors:** Sarah N. Elliott, Rosmi Reji, Qingzhi Chen, Xin Zheng, Simah Riaz, Xiaoli Yan, Thang Pham, Eliu Huerta, Ksenija D. Glusac, Murat Keçeli
+- **Venue:** ChemRxiv preprint (2026), doi:10.26434/chemrxiv.15004105/v2
+- **Summary:** Combines MACE machine-learning-potential thermochemistry of bipyridine–Ni–alkyne complexes and nickelacycle products, IR and DFT validation, and equivariant graph neural networks with GNNExplainer to identify the structure–reactivity relationships that govern CO₂ insertion and regioselectivity in Ni-catalyzed reductive carboxylation.
+- **Keywords:** nickel catalysis, CO2 insertion, reductive carboxylation, machine-learning interatomic potentials, MACE, graph neural networks, interpretable machine learning, high-throughput thermochemistry
+
+### `2026_yan_nanocarbons_extreme_conditions.pdf`
+- **Title:** From atomistic models to machine learning: Predictive design of nanocarbons under extreme conditions
+- **Authors:** Xiaoli Yan, Millicent A. Firestone, Murat Keçeli, Santanu Chaudhuri, Eliu Huerta
+- **Venue:** Carbon 252, 121366 (2026), doi:10.1016/j.carbon.2026.121366
+- **Summary:** Uses GPU-accelerated ReaxFF reactive molecular dynamics to follow the graphitization and remodeling of detonation nanodiamonds along quench and pressure-release trajectories, and trains a machine-learning model that predicts the resulting nanocarbon structure for a given temperature–pressure path in a fraction of a second.
+- **Keywords:** nanodiamond, nanocarbons, carbon nano-onions, reactive molecular dynamics, ReaxFF, extreme conditions, machine learning, GPU
+
 ### `2026_pham_chemgraph.pdf`
 - **Title:** ChemGraph as an agentic framework for computational chemistry workflows
 - **Authors:** Thang D. Pham, Aditya Tanikanti, Murat Keçeli
