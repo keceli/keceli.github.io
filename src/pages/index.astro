@@ -21,7 +21,7 @@ const pillarIcons: Record<string, string> = { quantum: 'atom', hpc: 'cpu', ai: '
   <!-- Hero -->
   <section class="hero">
     <div class="shell hero-layout">
-      <span class="eyebrow">Computational Scientist · Argonne National Laboratory</span>
+      <span class="eyebrow">Computational Scientist</span>
       <h1>AI, HPC, and Quantum Chemistry</h1>
       <div class="card card-solid hero-card">
         <p>Quantum mechanics provides a powerful foundation for predicting molecular and material behavior. Yet applying it to problems such as property prediction, materials design, drug discovery, and reaction chemistry remains challenging because accurate calculations are computationally expensive and chemical spaces are enormous.</p>
@@ -29,6 +29,10 @@ const pillarIcons: Record<string, string> = { quantum: 'atom', hpc: 'cpu', ai: '
       </div>
       <div class="hero-photo">
         <img src={siteMeta.portrait} alt="Portrait of Murat Keçeli" width="1000" height="866" loading="eager" />
+      </div>
+      <div class="hero-links">
+        <a class="btn btn-ghost btn-sm" href={siteMeta.links.linkedin} rel="noopener"><Icon name="linkedin" /> LinkedIn</a>
+        <a class="btn btn-ghost btn-sm" href={siteMeta.links.argonne} rel="noopener"><Icon name="external" /> Argonne profile</a>
       </div>
       <p class="equation"><span class="accent">AI</span> + <span class="accent">HPC</span> + <span class="accent">QC</span> = Accelerated Scientific Discovery</p>
       <div class="hero-actions">
@@ -191,6 +195,8 @@ const pillarIcons: Record<string, string> = { quantum: 'atom', hpc: 'cpu', ai: '
   .hero-layout > .hero-card { grid-column: 1; grid-row: 3; }
   .hero-layout > .hero-photo { grid-column: 2; grid-row: 3; }
   .hero-layout > .equation { grid-column: 1; grid-row: 4; }
+  .hero-layout > .hero-links { grid-column: 2; grid-row: 4; align-self: center; justify-content: center; }
+  .hero-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
   .hero-layout > .hero-actions { grid-column: 1; grid-row: 5; }
   .hero h1 {
     font-size: clamp(1.9rem, 3.1vw, 2.5rem);
