@@ -145,3 +145,9 @@ So the analogy isn't new, but this is my personal reflection on what it might me
 13. [Todd, *Computer-aided organic synthesis*, Chemical Society Reviews (2005)](https://doi.org/10.1039/B104620A)
 14. [Peiretti & Brunel, *Artificial Intelligence: The Future for Organic Chemistry?*, ACS Omega (2018)](https://doi.org/10.1021/acsomega.8b01773)
 15. [Preitschaft, *The Chemist's Gambit*, Chemistry World (2022)](https://www.chemistryworld.com/opinion/the-chemists-gambit/4014412.article)
+
+---
+
+### Comments
+
+If you have any comments, I would be glad to hear them: email me at [keceli@anl.gov](mailto:keceli@anl.gov), or join the discussion on [X](https://x.com/hpc4science/status/2116027791015870537?a=2Kv3LFqYe6HhQs3Y9G4) or [LinkedIn](https://lnkd.in/p/gYmEkRwi).
