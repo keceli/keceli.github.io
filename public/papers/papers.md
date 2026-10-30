@@ -19,6 +19,7 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 - **Title:** From atomistic models to machine learning: Predictive design of nanocarbons under extreme conditions
 - **Authors:** Xiaoli Yan, Millicent A. Firestone, Murat Keçeli, Santanu Chaudhuri, Eliu Huerta
 - **Venue:** Carbon 252, 121366 (2026), doi:10.1016/j.carbon.2026.121366
+- **Altmetric:** https://www.altmetric.com/details/191382152
 - **Summary:** Uses GPU-accelerated ReaxFF reactive molecular dynamics to follow the graphitization and remodeling of detonation nanodiamonds along quench and pressure-release trajectories, and trains a machine-learning model that predicts the resulting nanocarbon structure for a given temperature–pressure path in a fraction of a second.
 - **Keywords:** nanodiamond, nanocarbons, carbon nano-onions, reactive molecular dynamics, ReaxFF, extreme conditions, machine learning, GPU
 
@@ -26,6 +27,7 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 - **Title:** ChemGraph as an agentic framework for computational chemistry workflows
 - **Authors:** Thang D. Pham, Aditya Tanikanti, Murat Keçeli
 - **Venue:** Communications Chemistry 9, 33 (2026), doi:10.1038/s42004-025-01776-9
+- **Altmetric:** https://www.altmetric.com/details/187251631
 - **Summary:** ChemGraph is an LLM-driven agentic framework that couples graph-neural-network foundation models with conventional simulation tools to plan, execute, and validate atomistic computational chemistry and materials science workflows from natural-language requests.
 - **Keywords:** agentic AI, large language models, computational chemistry workflows, machine-learning interatomic potentials, foundation models, automation
 
@@ -39,7 +41,8 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 ### `2026_grizzi_chemgraph_xanes.pdf`
 - **Title:** ChemGraph-XANES: An Agentic Framework for XANES Simulation and Curation
 - **Authors:** Vitor F. Grizzi, Thang Duc Pham, Luke N. Pretzie, Jiayi Xu, Murat Keçeli, Cong Liu
-- **Venue:** arXiv:2604.16205 (2026)
+- **Venue:** RSC Advances 16, 56195–56207 (2026), arXiv:2604.16205, doi:10.1039/d6ra06166d
+- **Altmetric:** https://www.altmetric.com/details/204987794
 - **Summary:** ChemGraph-XANES extends the ChemGraph agent with documentation-grounded RAG parameter retrieval, schema-constrained tools, deterministic FDMNES input generation, and Parsl-backed execution to automate large XANES simulation and curation campaigns.
 - **Keywords:** XANES, X-ray absorption spectroscopy, agentic AI, retrieval-augmented generation, FDMNES, Parsl, ChemGraph
 
@@ -53,7 +56,8 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 ### `2026_smith_petsc_agent_workflows.pdf`
 - **Title:** Improving Usability and Productivity of PETSc with Agent-Based Workflows
 - **Authors:** Barry Smith, Hong Zhang, Junchao Zhang, Satish Balay, Le Chen, Murat Keçeli, Lois Curfman McInnes
-- **Venue:** 2026 (preprint/report)
+- **Venue:** PEARC '26: Practice and Experience in Advanced Research Computing (2026), doi:10.1145/3785462.3815882
+- **Altmetric:** https://www.altmetric.com/details/200501069
 - **Summary:** Reports early experience building an AI-assisted, agent-based ecosystem—RAG grounded in PETSc manual pages and curated documentation—to help users select solvers, debug configurations, and validate results in PETSc.
 - **Keywords:** PETSc, LLM agents, retrieval-augmented generation, scientific software usability, numerical solvers, AI for HPC
 
@@ -76,14 +80,14 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 ### `2025_cappello_eaira.pdf`
 - **Title:** EAIRA: Establishing a Methodology for Evaluating AI Models as Scientific Research Assistants
 - **Authors:** Franck Cappello, Sandeep Madireddy, Robert Underwood, Neil Getty, Nicholas Lee-Ping Chia, Nesar Ramachandra, Josh Nguyen, Murat Keçeli, Tanwi Mallick, Zilinghan Li, Marieme Ngom, Chenhui Zhang, Angel Yanguas-Gil, Evan Antoniuk, Bhavya Kailkhura, Minyang Tian, Yufeng Du, Yuan-Sen Ting, Azton Wells, Bogdan Nicolae, Avinash Maurya, M. Mustafa Rafique, Eliu Huerta, Bo Li, Ian Foster, Rick Stevens
-- **Venue:** preprint (2025)
+- **Venue:** International Journal of High Performance Computing Applications (2026), doi:10.1177/10943420261467786
 - **Summary:** EAIRA is an Argonne methodology for evaluating LLMs as scientific research assistants through four evaluation classes—multiple-choice recall, open-response reasoning, lab-style experiments, and field-style interactive studies.
 - **Keywords:** AI evaluation, large language models, scientific research assistants, benchmarks, methodology, AI for science
 
 ### `2025_smith_petsc_ai_assistants.pdf`
 - **Title:** AI Assistants to Enhance and Exploit the PETSc Knowledge Base
 - **Authors:** Barry Smith, Junchao Zhang, Hong Zhang, Lois Curfman McInnes, Murat Keçeli, Archit Vasan, Satish Balay, Toby Isaac, Le Chen, Venkatram Vishwanath
-- **Venue:** arXiv:2506.20608 (2025)
+- **Venue:** ICPP Workshops '25: Workshop Proceedings of the 54th International Conference on Parallel Processing, 9–17 (2025), arXiv:2506.20608, doi:10.1145/3750720.3757281
 - **Summary:** Describes the PETSc team's LLM-powered system—RAG, reranking, and chatbots over source code, documentation, mailing lists, and issues—to make three decades of fragmented PETSc knowledge accessible to users and developers.
 - **Keywords:** PETSc, knowledge base, retrieval-augmented generation, chatbots, scientific software, LLM assistants
 
@@ -97,7 +101,8 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 ### `2025_reji_zr_mof_co2_photoreduction.pdf`
 - **Title:** Photochemical CO2 Reduction by a Postsynthetically Modified Zr-MOF
 - **Authors:** Rosmi Reji, Juan P. Vizuet, Xiaoli Yan, Biki K. Behera, Xin Zheng, Matthew Klenk, Nicholas P. Weingartz, George T. Kostopoulos, Lin X. Chen, Peter Zapol, Neeraj Agarwal, Eliu Huerta, Murat Keçeli, Santanu Chaudhuri, Ksenija D. Glusac
-- **Venue:** Inorganic Chemistry 64, 18304–18315 (2025)
+- **Venue:** Inorganic Chemistry 64, 18304–18315 (2025), doi:10.1021/acs.inorgchem.5c02600
+- **Altmetric:** https://www.altmetric.com/details/180781221
 - **Summary:** Reports synthesis, characterization, DFT modeling, and photocatalytic CO2-reduction performance of Ru@MOF-808, a Zr-MOF postsynthetically modified with a Ru-polypyridyl complex anchored at one Ru center per node.
 - **Keywords:** metal-organic frameworks, CO2 reduction, photocatalysis, MOF-808, ruthenium complexes, DFT, X-ray absorption spectroscopy
 
@@ -113,7 +118,7 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 ### `2024_leung_intro_hpc_bootcamp.pdf`
 - **Title:** Intro to HPC Bootcamp: Engaging New Communities Through Energy Justice Projects
 - **Authors:** Mary Ann Leung, Katharine Cahill, Rebecca Hartman-Baker, Paige Kinsley, Lois Curfman McInnes, Suzanne Parete-Koon, Sreeranjani Ramprakash, Subil Abraham, Lacy Beach Barrier, Gladys Chen, Lizanne DeStefano, Scott Feister, Sam Foreman, Daniel Fulton, Lipi Gupta, Yun He, Anjuli Jain Figueroa, Murat Keçeli, Talia Capozzoli Kessler, Kellen Leland, Charles Lively, Keisha Moore, Wilbur Ouma, Michael Sandoval, Rollin Thomas, Álvaro Vázquez-Mayagoitia
-- **Venue:** Journal of Computational Science Education (2024)
+- **Venue:** Journal of Computational Science Education 15, 49–56 (2024), doi:10.22369/issn.2153-4136/15/1/10
 - **Summary:** Describes the DOE Intro to HPC Bootcamp, a project-based program that uses energy-justice applications to introduce students from new and underrepresented communities to high-performance computing.
 - **Keywords:** HPC education, workforce development, energy justice, broadening participation, DOE, outreach
 
@@ -122,14 +127,15 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 ### `2023_elliott_cbh_anl_heats_of_formation.pdf`
 - **Title:** High-Accuracy Heats of Formation for Alkane Oxidation: From Small to Large via the Automated CBH-ANL Method
 - **Authors:** Sarah N. Elliott, Murat Keçeli, Manik K. Ghosh, Kieran P. Somers, Henry J. Curran, Stephen J. Klippenstein
-- **Venue:** J. Phys. Chem. A 127, 1512–1531 (2023)
+- **Venue:** J. Phys. Chem. A 127, 1512–1531 (2023), doi:10.1021/acs.jpca.2c07248
 - **Summary:** Introduces the automated CBH-ANL connectivity-based-hierarchy method and applies it to 194 alkane-oxidation species to deliver 0 K heats of formation with sub-kcal/mol 2σ uncertainties for combustion-relevant molecules.
 - **Keywords:** thermochemistry, heats of formation, CBH-ANL, connectivity-based hierarchy, combustion, alkane oxidation, automation, high-accuracy quantum chemistry
 
 ### `2023_elliott_alkane_oxidation_thermodynamics.pdf`
 - **Title:** Systematically derived thermodynamic properties for alkane oxidation
 - **Authors:** Sarah N. Elliott, Kevin B. Moore III, Andreas V. Copan, Yuri Georgievskii, Murat Keçeli, Kieran P. Somers, Manik K. Ghosh, Henry J. Curran, Stephen J. Klippenstein
-- **Venue:** Combustion and Flame 257, 112487 (2023)
+- **Venue:** Combustion and Flame 257, 112487 (2023), doi:10.1016/j.combustflame.2022.112487
+- **Altmetric:** https://www.altmetric.com/details/142315039
 - **Summary:** Uses the AutoMech automated theoretical-kinetics suite to systematically derive thermodynamic properties (enthalpies, entropies, heat capacities) for the species in alkane-oxidation combustion mechanisms.
 - **Keywords:** thermochemistry, combustion mechanisms, alkane oxidation, AutoMech, automated quantum chemistry, thermodynamic properties
 
@@ -137,6 +143,7 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 - **Title:** Gaussian approximation potentials for accurate thermal properties of two-dimensional materials
 - **Authors:** Tuğbey Kocabaş, Murat Keçeli, Álvaro Vázquez-Mayagoitia, Cem Sevik
 - **Venue:** Nanoscale 15, 8772 (2023), doi:10.1039/d3nr00399j
+- **Altmetric:** https://www.altmetric.com/details/146128559
 - **Summary:** Trains Gaussian approximation potentials on ab initio data for graphene, silicene, h-BN, and h-AlN and shows they reproduce first-principles lattice-dynamics and thermal properties at molecular-dynamics cost.
 - **Keywords:** Gaussian approximation potentials, machine-learning interatomic potentials, 2D materials, thermal properties, phonons, graphene, h-BN, molecular dynamics
 
@@ -151,6 +158,7 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 - **Title:** PluginPlay: Enabling Exascale Scientific Software One Module at a Time
 - **Authors:** Ryan M. Richard, Kristopher Keipert, Jonathan Waldrop, Murat Keçeli, David Williams-Young, Raymond Bair, Jeffery Boschen, Zachery Crandall, Kevin Gasperich, Quazi Ishtiaque Mahmud, Ajay Panyala, Edward Valeev, Hubertus van Dam, Wibe de Jong, Theresa L. Windus
 - **Venue:** J. Chem. Phys. (2023), doi:10.1063/5.0147903
+- **Altmetric:** https://www.altmetric.com/details/148255452
 - **Summary:** PluginPlay is a modular software framework, developed within the NWChemEx project, that lets exascale scientific applications be composed from interchangeable plugin modules with a common interface.
 - **Keywords:** scientific software engineering, modular frameworks, exascale, NWChemEx, plugins, software sustainability
 
@@ -160,20 +168,21 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 - **Title:** From NWChem to NWChemEx: Evolving with the Computational Chemistry Landscape
 - **Authors:** Karol Kowalski, Raymond Bair, Nicholas P. Bauman, Jeffery S. Boschen, Eric J. Bylaska, Jeff Daily, Wibe A. de Jong, Thom Dunning Jr., Niranjan Govind, Robert J. Harrison, Murat Keçeli, Kristopher Keipert, Sriram Krishnamoorthy, Suraj Kumar, Erdal Mutlu, Bruce Palmer, Ajay Panyala, Bo Peng, Ryan M. Richard, T. P. Straatsma, Peter Sushko, Edward F. Valeev, Marat Valiev, Hubertus J. J. van Dam, Jonathan M. Waldrop, David B. Williams-Young, Chao Yang, Marcin Zalewski, Theresa L. Windus
 - **Venue:** Chemical Reviews (2021), doi:10.1021/acs.chemrev.0c00998
+- **Altmetric:** https://www.altmetric.com/details/103111966
 - **Summary:** Review of how computational chemistry software has evolved from terascale to petascale to exascale hardware, using NWChem and its redesign NWChemEx as the central case study in co-design for massively parallel and GPU architectures.
 - **Keywords:** NWChem, NWChemEx, exascale computing, computational chemistry software, review, co-design, GPUs
 
 ### `2021_demiroglu_graphene_thermal_expansion_gap.pdf`
 - **Title:** Computation of the Thermal Expansion Coefficient of Graphene with Gaussian Approximation Potentials
 - **Authors:** İlker Demiroğlu, Yenal Karaaslan, Tuğbey Kocabaş, Murat Keçeli, Álvaro Vázquez-Mayagoitia, Cem Sevik
-- **Venue:** J. Phys. Chem. C 125, 14409–14415 (2021)
+- **Venue:** J. Phys. Chem. C 125, 14409–14415 (2021), doi:10.1021/acs.jpcc.1c01888
 - **Summary:** Uses a Gaussian approximation potential trained on ab initio data to compute the temperature-dependent thermal expansion coefficient of graphene via molecular dynamics at a fraction of the cost of ab initio MD.
 - **Keywords:** graphene, thermal expansion, Gaussian approximation potentials, machine-learning potentials, molecular dynamics, 2D materials
 
 ### `2021_elliott_automech_pyrolysis_kinetics.pdf`
 - **Title:** Automated theoretical chemical kinetics: Predicting the kinetics for the initial stages of pyrolysis
 - **Authors:** Sarah N. Elliott, Kevin B. Moore III, Andreas V. Copan, Murat Keçeli, Carlo Cavallotti, Yuri Georgievskii, Henry F. Schaefer III, Stephen J. Klippenstein
-- **Venue:** Proceedings of the Combustion Institute 38, 375–384 (2021)
+- **Venue:** Proceedings of the Combustion Institute 38, 375–384 (2021), doi:10.1016/j.proci.2020.06.019
 - **Summary:** Presents AutoMech, a code suite that automatically predicts rate constants for large reaction sets via ab initio transition-state-theory master-equation calculations, demonstrated on the initial stages of hydrocarbon pyrolysis.
 - **Keywords:** AutoMech, automated kinetics, transition state theory, master equation, pyrolysis, combustion chemistry
 
@@ -189,7 +198,8 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 ### `2020_yu_elsi.pdf`
 - **Title:** ELSI — An open infrastructure for electronic structure solvers
 - **Authors:** Victor Wen-zhe Yu, Carmen Campos, William Dawson, Alberto García, Ville Havu, Ben Hourahine, William P. Huhn, Mathias Jacquelin, Weile Jia, Murat Keçeli, Raul Laasner, Yingzhou Li, Lin Lin, Jianfeng Lu, Jonathan Moussa, Jose E. Roman, Álvaro Vázquez-Mayagoitia, Chao Yang, Volker Blum
-- **Venue:** Computer Physics Communications 256, 107459 (2020)
+- **Venue:** Computer Physics Communications 256, 107459 (2020), doi:10.1016/j.cpc.2020.107459
+- **Altmetric:** https://www.altmetric.com/details/73480317
 - **Summary:** ELSI provides a unified open interface connecting electronic-structure codes to a suite of Kohn–Sham eigensolvers and density-matrix solvers (ELPA, SLEPc-SIPs, libOMM, PEXSI, NTPoly, and others) with performance guidance.
 - **Keywords:** electronic structure, eigensolvers, ELSI, Kohn-Sham, SLEPc, density matrix solvers, HPC software infrastructure
 
@@ -198,14 +208,14 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 ### `2019_keceli_butane_thermochemistry.pdf`
 - **Title:** Automated Computational Thermochemistry for Butane Oxidation: A Prelude to Predictive Automated Combustion Kinetics
 - **Authors:** Murat Keçeli, Sarah N. Elliott, Yi-Pei Li, Matthew S. Johnson, Carlo Cavallotti, Yuri Georgievskii, William H. Green, Matteo Pelucchi, Justin M. Wozniak, Ahren W. Jasper, Stephen J. Klippenstein
-- **Venue:** Proceedings of the Combustion Institute 37 (2019)
+- **Venue:** Proceedings of the Combustion Institute 37, 363–371 (2019), doi:10.1016/j.proci.2018.07.113
 - **Summary:** Develops an automated, HPC-scale procedure that generates species lists, optimal torsional conformers, anharmonic rovibrational properties, and high-level thermochemistry for an arbitrary fuel, demonstrated on butane oxidation.
 - **Keywords:** automated thermochemistry, combustion, butane oxidation, conformer sampling, anharmonic corrections, high-performance computing, workflow automation
 
 ### `2019_fletcher_valence_vsvb.pdf`
 - **Title:** VALENCE: A Massively Parallel Implementation of the Variational Subspace Valence Bond Method
 - **Authors:** Graham D. Fletcher, Colleen Bertoni, Murat Keçeli, Michael D'Mello
-- **Venue:** J. Comput. Chem. (2019)
+- **Venue:** J. Comput. Chem. 40, 1664–1673 (2019), doi:10.1002/jcc.25818
 - **Summary:** VALENCE is an open-source, massively parallel implementation of the variational subspace valence bond (VSVB) method with nonorthogonal orbitals, automatic wave-function construction from an orbital database, and a library build for integration with other codes.
 - **Keywords:** valence bond theory, VSVB, nonorthogonal orbitals, parallel electronic structure, open-source software, HPC
 
@@ -213,6 +223,7 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 - **Title:** Understanding the anharmonic vibrational structure of the carbon dioxide dimer
 - **Authors:** Samuel Maystrovsky, Murat Keçeli, Olaseni Sode
 - **Venue:** J. Chem. Phys. 150, 144302 (2019), doi:10.1063/1.5089460
+- **Altmetric:** https://www.altmetric.com/details/59131328
 - **Summary:** Uses the CCSD(T)-F12b-trained mbCO2 potential with VSCF, VMP2, and VCI to compute anharmonic vibrational spectra of the CO2 monomer and dimer and benchmark them against experiment.
 - **Keywords:** anharmonic vibrations, CO2 dimer, vibrational configuration interaction, many-body potential, van der Waals complexes, quartic force field
 
@@ -221,7 +232,8 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 ### `2018_keceli_siesta_sips.pdf`
 - **Title:** SIESTA-SIPs: Massively Parallel Spectrum-Slicing Eigensolver for an Ab Initio Molecular Dynamics Package
 - **Authors:** Murat Keçeli, Fabiano Corsetti, Carmen Campos, Jose E. Roman, Hong Zhang, Álvaro Vázquez-Mayagoitia, Peter Zapol, Albert F. Wagner
-- **Venue:** J. Comput. Chem. (2018)
+- **Venue:** J. Comput. Chem. 39, 1806–1814 (2018), doi:10.1002/jcc.25350
+- **Altmetric:** https://www.altmetric.com/details/61050931
 - **Summary:** Integrates the SLEPc shift-and-invert spectrum-slicing eigensolver (SIPs) into SIESTA and shows that its parallel performance depends on matrix sparsity, favoring reduced-dimensional systems such as polyethylene and BN sheets over bulk water.
 - **Keywords:** eigensolvers, spectrum slicing, SIESTA, SLEPc, PETSc, density functional theory, parallel scalability, ab initio molecular dynamics
 
@@ -237,7 +249,8 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 ### `2016_keceli_sips_eigensolver_dftb.pdf`
 - **Title:** Shift-and-Invert Parallel Spectral Transformation Eigensolver: Massively Parallel Performance for Density-Functional Based Tight-Binding
 - **Authors:** Murat Keçeli, Hong Zhang, Peter Zapol, David A. Dixon, Albert F. Wagner
-- **Venue:** J. Comput. Chem. (2016)
+- **Venue:** J. Comput. Chem. 37, 448–459 (2016), doi:10.1002/jcc.24254
+- **Altmetric:** https://www.altmetric.com/details/4784676
 - **Summary:** Develops the SIPs shift-and-invert spectrum-slicing eigensolver for massively parallel architectures and demonstrates it on DFTB Hamiltonians of up to 128,000-atom carbon nanotubes, obtaining 330,000 eigenpairs in 190 s on 266,144 cores.
 - **Keywords:** eigensolvers, spectrum slicing, SLEPc, DFTB, tight-binding, carbon nanotubes, massively parallel, sparse linear algebra
 
@@ -246,7 +259,7 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 ### `2012_hirata_extensivity_crystals.pdf`
 - **Title:** Extensivity of Energy and Electronic and Vibrational Structure Methods for Crystals
 - **Authors:** So Hirata, Murat Keçeli, Yu-ya Ohnishi, Olaseni Sode, Kiyoshi Yagi
-- **Venue:** Annual Review of Physical Chemistry 63, 131–153 (2012)
+- **Venue:** Annual Review of Physical Chemistry 63, 131–153 (2012), doi:10.1146/annurev-physchem-032511-143718
 - **Summary:** Review presenting a pedagogical proof of the extensivity of crystal energies and deriving size-consistency guidelines—the extensive and intensive diagram theorems—for designing electronic and vibrational structure methods for solids.
 - **Keywords:** size extensivity, size consistency, many-body theory, crystals, diagrammatic methods, vibrational structure theory, review
 
@@ -255,14 +268,14 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 ### `2010_keceli_fast_ccsd_extended_systems.pdf`
 - **Title:** Fast coupled-cluster singles and doubles for extended systems: Application to the anharmonic vibrational frequencies of polyethylene in the Γ approximation
 - **Authors:** Murat Keçeli, So Hirata
-- **Venue:** Physical Review B 82, 115107 (2010)
+- **Venue:** Physical Review B 82, 115107 (2010), doi:10.1103/PhysRevB.82.115107
 - **Summary:** Introduces the mod-n wave-vector downsampling scheme that accelerates periodic CCSD and MP3 correlation-energy calculations by two to three orders of magnitude with negligible error, enabling anharmonic vibrational frequencies of polyethylene.
 - **Keywords:** coupled cluster, periodic systems, Brillouin-zone sampling, polyethylene, anharmonic vibrations, electron correlation, polymers
 
 ### `2010_hirata_anharmonic_lattice_vibrations.pdf`
 - **Title:** First-principles theories for anharmonic lattice vibrations
 - **Authors:** So Hirata, Murat Keçeli, Kiyoshi Yagi
-- **Venue:** J. Chem. Phys. 133, 034109 (2010)
+- **Venue:** J. Chem. Phys. 133, 034109 (2010), doi:10.1063/1.3462237
 - **Summary:** Derives size-extensive generalizations of VSCF, vibrational Møller–Plesset perturbation, and vibrational coupled-cluster theories for anharmonic lattice vibrations of periodic solids using a quartic force field in delocalized normal coordinates.
 - **Keywords:** anharmonic lattice vibrations, vibrational self-consistent field, vibrational coupled cluster, quartic force field, phonons, size extensivity, periodic systems
 
@@ -271,7 +284,7 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 ### `2009_keceli_anharmonic_combustion_species.pdf`
 - **Title:** Anharmonic vibrational frequencies and vibrationally-averaged structures of key species in hydrocarbon combustion: HCO+, HCO, HNO, HOO, HOO−, CH3+, and CH3
 - **Authors:** Murat Keçeli, Toru Shiozaki, Kiyoshi Yagi, So Hirata
-- **Venue:** Molecular Physics 107, 1283–1301 (2009)
+- **Venue:** Molecular Physics 107, 1283–1301 (2009), doi:10.1080/00268970902889626
 - **Summary:** Computes anharmonic vibrational frequencies and vibrationally averaged geometries of seven small combustion-relevant radicals and ions using high-level coupled-cluster quartic force fields with vibrational structure theories.
 - **Keywords:** anharmonic vibrational frequencies, combustion intermediates, radicals, coupled cluster, quartic force field, vibrationally averaged structures, spectroscopy
 
@@ -287,7 +300,7 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 ### `2007_keceli_nonlinear_optics_ansatz_bec.pdf`
 - **Title:** Ansatz from nonlinear optics applied to trapped Bose–Einstein condensates
 - **Authors:** Murat Keçeli, F. Ö. Ilday, M. Ö. Oktel
-- **Venue:** Physical Review A (2007)
+- **Venue:** Physical Review A 75, 035601 (2007), doi:10.1103/PhysRevA.75.035601
 - **Summary:** Adapts the similariton-laser intensity-profile ansatz from nonlinear optics as a variational wave function for the Gross–Pitaevskii equation, smoothly interpolating between the noninteracting and Thomas–Fermi limits in symmetric and anisotropic harmonic traps.
 - **Keywords:** Bose-Einstein condensates, Gross-Pitaevskii equation, variational ansatz, nonlinear optics, similariton, ultracold atoms
 
@@ -296,7 +309,7 @@ Entries are ordered newest → oldest. Summaries were written from the title and
 ### `2006_keceli_tkachenko_modes_two_component_bec.pdf`
 - **Title:** Tkachenko modes and structural phase transitions of the vortex lattice of a two-component Bose–Einstein condensate
 - **Authors:** M. Keçeli, M. Ö. Oktel
-- **Venue:** Physical Review A (2006)
+- **Venue:** Physical Review A 73, 023611 (2006), doi:10.1103/PhysRevA.73.023611
 - **Summary:** Calculates the Tkachenko-mode dispersion and elastic constants of vortex lattices in rapidly rotating two-component Bose–Einstein condensates in the mean-field quantum Hall regime, including coupling to density excitations and lattice-geometry phase transitions.
 - **Keywords:** Bose-Einstein condensates, vortex lattices, Tkachenko modes, quantum Hall regime, elastic constants, structural phase transitions, ultracold atoms
 

@@ -11,6 +11,7 @@ year: 2026
 date: 2026-01-01
 type: journal
 doi: "10.1016/j.carbon.2026.121366"
+altmetric: "https://www.altmetric.com/details/191382152"
 pdf: "/papers/2026_yan_nanocarbons_extreme_conditions.pdf"
 project: "ml-potentials-2d-materials"
 topic: "ML potentials & 2D materials"

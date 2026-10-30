@@ -11,10 +11,11 @@ authors:
   - "Toby Isaac"
   - "Le Chen"
   - "Venkatram Vishwanath"
-venue: "arXiv:2506.20608 (2025)"
+venue: "ICPP Workshops '25: Workshop Proceedings of the 54th International Conference on Parallel Processing, 9–17 (2025), arXiv:2506.20608"
 year: 2025
 date: 2025-01-01
-type: preprint
+type: conference
+doi: "10.1145/3750720.3757281"
 arxiv: "2506.20608"
 pdf: "/papers/2025_smith_petsc_ai_assistants.pdf"
 code: "https://github.com/petsc/petscagent-bench"

@@ -13,6 +13,7 @@ venue: "Proceedings of the Combustion Institute 38, 375–384 (2021)"
 year: 2021
 date: 2021-01-01
 type: journal
+doi: "10.1016/j.proci.2020.06.019"
 pdf: "/papers/2021_elliott_automech_pyrolysis_kinetics.pdf"
 code: "https://github.com/Auto-Mech"
 project: "automated-thermochemistry"

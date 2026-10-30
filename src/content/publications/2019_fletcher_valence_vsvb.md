@@ -5,10 +5,11 @@ authors:
   - "Colleen Bertoni"
   - "Murat Keçeli"
   - "Michael D'Mello"
-venue: "J. Comput. Chem. (2019)"
+venue: "J. Comput. Chem. 40, 1664–1673 (2019)"
 year: 2019
 date: 2019-01-01
 type: journal
+doi: "10.1002/jcc.25818"
 pdf: "/papers/2019_fletcher_valence_vsvb.pdf"
 code: "https://github.com/VALENCE-software/VALENCE"
 project: "eigensolvers-exascale-software"

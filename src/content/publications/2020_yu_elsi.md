@@ -24,6 +24,8 @@ venue: "Computer Physics Communications 256, 107459 (2020)"
 year: 2020
 date: 2020-01-01
 type: journal
+doi: "10.1016/j.cpc.2020.107459"
+altmetric: "https://www.altmetric.com/details/73480317"
 pdf: "/papers/2020_yu_elsi.pdf"
 code: "https://github.com/ElectronicStructureLibrary/elsi-interface"
 project: "eigensolvers-exascale-software"

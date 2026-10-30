@@ -3,10 +3,11 @@ title: "Tkachenko modes and structural phase transitions of the vortex lattice o
 authors: 
   - "M. Keçeli"
   - "M. Ö. Oktel"
-venue: "Physical Review A (2006)"
+venue: "Physical Review A 73, 023611 (2006)"
 year: 2006
 date: 2006-01-01
 type: journal
+doi: "10.1103/PhysRevA.73.023611"
 pdf: "/papers/2006_keceli_tkachenko_modes_two_component_bec.pdf"
 topic: "Ultracold atoms"
 areas: 

@@ -9,6 +9,7 @@ venue: "Molecular Physics 107, 1283–1301 (2009)"
 year: 2009
 date: 2009-01-01
 type: journal
+doi: "10.1080/00268970902889626"
 pdf: "/papers/2009_keceli_anharmonic_combustion_species.pdf"
 project: "anharmonic-vibrations"
 topic: "Vibrational & electronic structure theory"

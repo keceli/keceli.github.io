@@ -31,6 +31,7 @@ const searchText = `${d.title} ${d.authors.join(' ')} ${d.venue} ${d.keywords.jo
       {d.doi && <a href={`https://doi.org/${d.doi}`} rel="noopener">DOI</a>}
       {d.arxiv && <a href={`https://arxiv.org/abs/${d.arxiv}`} rel="noopener">arXiv</a>}
       {d.pdf && <a href={d.pdf}>PDF</a>}
+      {d.altmetric && <a href={d.altmetric} rel="noopener">Altmetric</a>}
       {d.code && <a href={d.code} rel="noopener">Code</a>}
       {d.project && isLive('research') && <a href={`/research/${d.project}/`}>Project</a>}
     </div>

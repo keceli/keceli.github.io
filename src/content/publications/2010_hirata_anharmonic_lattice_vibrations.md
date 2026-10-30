@@ -8,6 +8,7 @@ venue: "J. Chem. Phys. 133, 034109 (2010)"
 year: 2010
 date: 2010-01-01
 type: journal
+doi: "10.1063/1.3462237"
 pdf: "/papers/2010_hirata_anharmonic_lattice_vibrations.pdf"
 project: "anharmonic-vibrations"
 topic: "Vibrational & electronic structure theory"

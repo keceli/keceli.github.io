@@ -47,13 +47,13 @@ PAPER_MAP = {
     "2026_yan_nanocarbons_extreme_conditions": ("ml-potentials-2d-materials", "mlp", True, "journal"),
     "2026_elliott_nickel_oxidative_addition_ml": ("photocarboxylation", "materials", True, "preprint"),
     "2026_pham_multiagent_materials_screening": ("chemgraph-agents", "agents", True, "preprint"),
-    "2026_grizzi_chemgraph_xanes": ("chemgraph-agents", "agents", False, "preprint"),
+    "2026_grizzi_chemgraph_xanes": ("chemgraph-agents", "agents", False, "journal"),
     "2026_tummalapalli_ensemblelauncher": ("chemgraph-agents", "agents", False, "preprint"),
-    "2026_smith_petsc_agent_workflows": ("ai-assistants-hpc", "assistants", False, "report"),
+    "2026_smith_petsc_agent_workflows": ("ai-assistants-hpc", "assistants", False, "conference"),
     "2026_roy_llm_hackathon_materials_chemistry": ("chemgraph-agents", "agents", False, "preprint"),
     "2025_kocabas_mos2_mose2_thermal_conductivity": ("ml-potentials-2d-materials", "mlp", True, "journal"),
-    "2025_cappello_eaira": ("ai-assistants-hpc", "assistants", True, "preprint"),
-    "2025_smith_petsc_ai_assistants": ("ai-assistants-hpc", "assistants", False, "preprint"),
+    "2025_cappello_eaira": ("ai-assistants-hpc", "assistants", True, "journal"),
+    "2025_smith_petsc_ai_assistants": ("ai-assistants-hpc", "assistants", False, "conference"),
     "2025_bondapalli_askhpc": ("ai-assistants-hpc", "assistants", True, "conference"),
     "2025_reji_zr_mof_co2_photoreduction": (None, "materials", False, "journal"),
     "2025_wen_red_teaming_generative_ai_copyright": ("ai-assistants-hpc", "assistants", False, "report"),
@@ -239,6 +239,8 @@ def write_publications(dry: bool):
             fm.append(f"doi: {yaml_str(doi.group(1).rstrip(','))}")
         if arxiv:
             fm.append(f"arxiv: {yaml_str(arxiv.group(1))}")
+        if f.get("altmetric"):
+            fm.append(f"altmetric: {yaml_str(f['altmetric'])}")
         if (ROOT / 'public/papers' / f'{stem}.pdf').exists():
             fm.append(f"pdf: {yaml_str('/papers/' + stem + '.pdf')}")
         if stem in PAPER_CODE:

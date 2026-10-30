@@ -27,10 +27,11 @@ authors:
   - "Bo Li"
   - "Ian Foster"
   - "Rick Stevens"
-venue: "preprint (2025)"
+venue: "International Journal of High Performance Computing Applications (2026)"
 year: 2025
 date: 2025-01-01
-type: preprint
+type: journal
+doi: "10.1177/10943420261467786"
 pdf: "/papers/2025_cappello_eaira.pdf"
 project: "ai-assistants-hpc"
 topic: "AI assistants & evaluation"

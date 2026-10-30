@@ -20,6 +20,8 @@ venue: "Inorganic Chemistry 64, 18304–18315 (2025)"
 year: 2025
 date: 2025-01-01
 type: journal
+doi: "10.1021/acs.inorgchem.5c02600"
+altmetric: "https://www.altmetric.com/details/180781221"
 pdf: "/papers/2025_reji_zr_mof_co2_photoreduction.pdf"
 topic: "Materials & catalysis"
 areas: 

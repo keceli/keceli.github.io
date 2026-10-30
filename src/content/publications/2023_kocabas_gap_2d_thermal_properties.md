@@ -10,6 +10,7 @@ year: 2023
 date: 2023-01-01
 type: journal
 doi: "10.1039/d3nr00399j"
+altmetric: "https://www.altmetric.com/details/146128559"
 pdf: "/papers/2023_kocabas_gap_2d_thermal_properties.pdf"
 code: "https://github.com/AI4Materials/2DM-GAP"
 project: "ml-potentials-2d-materials"

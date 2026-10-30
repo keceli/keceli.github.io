@@ -7,11 +7,13 @@ authors:
   - "Jiayi Xu"
   - "Murat Keçeli"
   - "Cong Liu"
-venue: "arXiv:2604.16205 (2026)"
+venue: "RSC Advances 16, 56195–56207 (2026), arXiv:2604.16205"
 year: 2026
 date: 2026-01-01
-type: preprint
+type: journal
+doi: "10.1039/d6ra06166d"
 arxiv: "2604.16205"
+altmetric: "https://www.altmetric.com/details/204987794"
 pdf: "/papers/2026_grizzi_chemgraph_xanes.pdf"
 code: "https://github.com/argonne-lcf/ChemGraph"
 project: "chemgraph-agents"

@@ -9,6 +9,7 @@ year: 2019
 date: 2019-01-01
 type: journal
 doi: "10.1063/1.5089460"
+altmetric: "https://www.altmetric.com/details/59131328"
 pdf: "/papers/2019_maystrovsky_co2_dimer_anharmonic.pdf"
 project: "anharmonic-vibrations"
 topic: "Vibrational & electronic structure theory"

@@ -46,6 +46,7 @@ const publications = defineCollection({
     type: z.enum(['journal', 'conference', 'preprint', 'report', 'review', 'supplement']).default('journal'),
     doi: z.string().optional(),
     arxiv: z.string().optional(),
+    altmetric: z.string().url().optional(),
     pdf: z.string().optional(),
     code: z.string().url().optional(),
     project: z.string().optional(),

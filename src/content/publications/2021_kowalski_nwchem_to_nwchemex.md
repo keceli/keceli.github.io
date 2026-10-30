@@ -35,6 +35,7 @@ year: 2021
 date: 2021-01-01
 type: review
 doi: "10.1021/acs.chemrev.0c00998"
+altmetric: "https://www.altmetric.com/details/103111966"
 pdf: "/papers/2021_kowalski_nwchem_to_nwchemex.pdf"
 project: "eigensolvers-exascale-software"
 topic: "Eigensolvers & scientific software"

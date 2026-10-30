@@ -6,10 +6,12 @@ authors:
   - "Peter Zapol"
   - "David A. Dixon"
   - "Albert F. Wagner"
-venue: "J. Comput. Chem. (2016)"
+venue: "J. Comput. Chem. 37, 448–459 (2016)"
 year: 2016
 date: 2016-01-01
 type: journal
+doi: "10.1002/jcc.24254"
+altmetric: "https://www.altmetric.com/details/4784676"
 pdf: "/papers/2016_keceli_sips_eigensolver_dftb.pdf"
 code: "https://github.com/keceli/SLEPc-SIPs"
 project: "eigensolvers-exascale-software"

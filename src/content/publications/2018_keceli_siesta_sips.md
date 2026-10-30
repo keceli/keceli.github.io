@@ -9,10 +9,12 @@ authors:
   - "Álvaro Vázquez-Mayagoitia"
   - "Peter Zapol"
   - "Albert F. Wagner"
-venue: "J. Comput. Chem. (2018)"
+venue: "J. Comput. Chem. 39, 1806–1814 (2018)"
 year: 2018
 date: 2018-01-01
 type: journal
+doi: "10.1002/jcc.25350"
+altmetric: "https://www.altmetric.com/details/61050931"
 pdf: "/papers/2018_keceli_siesta_sips.pdf"
 code: "https://github.com/keceli/siesta-sips"
 project: "eigensolvers-exascale-software"

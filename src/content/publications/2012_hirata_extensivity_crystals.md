@@ -10,6 +10,7 @@ venue: "Annual Review of Physical Chemistry 63, 131–153 (2012)"
 year: 2012
 date: 2012-01-01
 type: review
+doi: "10.1146/annurev-physchem-032511-143718"
 pdf: "/papers/2012_hirata_extensivity_crystals.pdf"
 project: "anharmonic-vibrations"
 topic: "Vibrational & electronic structure theory"

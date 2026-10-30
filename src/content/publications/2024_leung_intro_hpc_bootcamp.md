@@ -27,10 +27,11 @@ authors:
   - "Michael Sandoval"
   - "Rollin Thomas"
   - "Álvaro Vázquez-Mayagoitia"
-venue: "Journal of Computational Science Education (2024)"
+venue: "Journal of Computational Science Education 15, 49–56 (2024)"
 year: 2024
 date: 2024-01-01
 type: journal
+doi: "10.22369/issn.2153-4136/15/1/10"
 pdf: "/papers/2024_leung_intro_hpc_bootcamp.pdf"
 code: "https://github.com/keceli/IntroductionToHPCBootcamp"
 project: "education-outreach"

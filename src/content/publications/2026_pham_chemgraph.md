@@ -9,6 +9,7 @@ year: 2026
 date: 2026-01-01
 type: journal
 doi: "10.1038/s42004-025-01776-9"
+altmetric: "https://www.altmetric.com/details/187251631"
 pdf: "/papers/2026_pham_chemgraph.pdf"
 code: "https://github.com/argonne-lcf/ChemGraph"
 project: "chemgraph-agents"

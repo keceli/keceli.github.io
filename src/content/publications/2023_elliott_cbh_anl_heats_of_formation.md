@@ -11,6 +11,7 @@ venue: "J. Phys. Chem. A 127, 1512–1531 (2023)"
 year: 2023
 date: 2023-01-01
 type: journal
+doi: "10.1021/acs.jpca.2c07248"
 pdf: "/papers/2023_elliott_cbh_anl_heats_of_formation.pdf"
 project: "automated-thermochemistry"
 topic: "Thermochemistry & kinetics"

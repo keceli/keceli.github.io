@@ -12,10 +12,11 @@ authors:
   - "Justin M. Wozniak"
   - "Ahren W. Jasper"
   - "Stephen J. Klippenstein"
-venue: "Proceedings of the Combustion Institute 37 (2019)"
+venue: "Proceedings of the Combustion Institute 37, 363–371 (2019)"
 year: 2019
 date: 2019-01-01
 type: journal
+doi: "10.1016/j.proci.2018.07.113"
 pdf: "/papers/2019_keceli_butane_thermochemistry.pdf"
 code: "https://github.com/PACChem/QTC"
 project: "automated-thermochemistry"

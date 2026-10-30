@@ -37,6 +37,7 @@ const bib = `@article{${bibKey},\n  title = {${d.title}},\n  author = {${d.autho
       {d.doi && <a class="btn btn-primary btn-sm" href={`https://doi.org/${d.doi}`} rel="noopener"><Icon name="external" /> Publisher (DOI)</a>}
       {d.arxiv && <a class="btn btn-ghost btn-sm" href={`https://arxiv.org/abs/${d.arxiv}`} rel="noopener"><Icon name="external" /> arXiv</a>}
       {d.pdf && <a class="btn btn-ghost btn-sm" href={d.pdf}><Icon name="pdf" /> PDF</a>}
+        {d.altmetric && <a class="btn btn-ghost btn-sm" href={d.altmetric} rel="noopener"><Icon name="external" /> Altmetric</a>}
       {supplement?.data.pdf && <a class="btn btn-ghost btn-sm" href={supplement.data.pdf}><Icon name="pdf" /> Supplement</a>}
       {d.code && <a class="btn btn-ghost btn-sm" href={d.code} rel="noopener"><Icon name="code" /> Code</a>}
     </div>

@@ -14,6 +14,8 @@ venue: "Combustion and Flame 257, 112487 (2023)"
 year: 2023
 date: 2023-01-01
 type: journal
+doi: "10.1016/j.combustflame.2022.112487"
+altmetric: "https://www.altmetric.com/details/142315039"
 pdf: "/papers/2023_elliott_alkane_oxidation_thermodynamics.pdf"
 project: "automated-thermochemistry"
 topic: "Thermochemistry & kinetics"

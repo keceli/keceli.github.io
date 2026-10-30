@@ -11,6 +11,7 @@ venue: "J. Phys. Chem. C 125, 14409–14415 (2021)"
 year: 2021
 date: 2021-01-01
 type: journal
+doi: "10.1021/acs.jpcc.1c01888"
 pdf: "/papers/2021_demiroglu_graphene_thermal_expansion_gap.pdf"
 project: "ml-potentials-2d-materials"
 topic: "ML potentials & 2D materials"

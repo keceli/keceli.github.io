@@ -4,10 +4,11 @@ authors:
   - "Murat Keçeli"
   - "F. Ö. Ilday"
   - "M. Ö. Oktel"
-venue: "Physical Review A (2007)"
+venue: "Physical Review A 75, 035601 (2007)"
 year: 2007
 date: 2007-01-01
 type: journal
+doi: "10.1103/PhysRevA.75.035601"
 pdf: "/papers/2007_keceli_nonlinear_optics_ansatz_bec.pdf"
 topic: "Ultracold atoms"
 areas: 

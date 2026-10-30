@@ -21,6 +21,7 @@ year: 2023
 date: 2023-01-01
 type: journal
 doi: "10.1063/5.0147903"
+altmetric: "https://www.altmetric.com/details/148255452"
 pdf: "/papers/2023_richard_pluginplay.pdf"
 code: "https://github.com/NWChemEx/PluginPlay"
 project: "eigensolvers-exascale-software"

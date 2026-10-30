@@ -8,10 +8,12 @@ authors:
   - "Le Chen"
   - "Murat Keçeli"
   - "Lois Curfman McInnes"
-venue: "2026 (preprint/report)"
+venue: "PEARC '26: Practice and Experience in Advanced Research Computing (2026)"
 year: 2026
 date: 2026-01-01
-type: report
+type: conference
+doi: "10.1145/3785462.3815882"
+altmetric: "https://www.altmetric.com/details/200501069"
 pdf: "/papers/2026_smith_petsc_agent_workflows.pdf"
 code: "https://github.com/petsc/petscagent-bench"
 project: "ai-assistants-hpc"

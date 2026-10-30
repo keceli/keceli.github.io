@@ -7,6 +7,7 @@ venue: "Physical Review B 82, 115107 (2010)"
 year: 2010
 date: 2010-01-01
 type: journal
+doi: "10.1103/PhysRevB.82.115107"
 pdf: "/papers/2010_keceli_fast_ccsd_extended_systems.pdf"
 project: "anharmonic-vibrations"
 topic: "Vibrational & electronic structure theory"
