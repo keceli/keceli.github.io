@@ -1,107 +1,112 @@
 ---
-title: "Einstein Is Right Again: AI Gives Advice, but Al Fixes the Problem"
+title: "AI vs Al"
 date: 2026-10-31
-summary: "A shower with no hot-water pressure, a lot of AI advice, and a plumber named Al who finally fixed it."
+summary: "AI helped me diagnose a plumbing problem. Al fixed it. Einstein would have approved."
 tags:
   - ai
   - diy
   - future-of-work
 draft: false
 featured: false
+font: hyperlegible
 ---
 
-Have you ever had low hot-water pressure at just one faucet in the house? We had exactly that problem in one of the showers. Every other faucet worked fine, so it was easy to ignore for a while. I didn't want to pay for something I thought I could fix myself. How hard could it be?
+Our shower had a strange problem: plenty of cold water, barely any hot. Every other faucet in the house worked fine.
 
-Armed with AI advice and YouTube tutorials, I got to work.
+I figured I could fix it myself. Mostly because I didn't want to pay a plumber. How hard could it be?
 
-The AI's first suggestion was to replace the cartridge. I hadn't even known the part existed, but after watching more videos than I care to admit, I felt like an expert. I bought the part and the tools, and after several more videos and hours of struggling with the disassembly, I replaced it. Nothing changed.
+Armed with AI advice and YouTube tutorials, I began my plumbing career.
 
-More videos and more AI chats later, the next suggestion was to flush the line. I got thoroughly wet, nothing but water came out, and I gave up. Well, for a week.
+First, AI suggested replacing the cartridge. I didn't know what a cartridge was, but after several YouTube videos, I practically considered myself an expert. I bought the tools, struggled for hours, and finally replaced it.
 
-The following week I tried to inspect the pipe with the snake camera left over from my previous HVAC adventure. That didn't last long: the water lines were too narrow, and I couldn't see a thing.
+Nothing changed.
 
-The AI and I reached a consensus: something was blocking the hot-water line behind the wall.
+Next suggestion: flush the line. I got thoroughly wet. The shower remained unimpressed.
 
-The suggested solution? Open the wall.
+A week later, I tried inspecting the pipe with a snake camera left over from a previous HVAC adventure. The pipe was too narrow. Another failure.
 
-That sounded considerably more expensive than the plumber I had been trying to avoid.
+Eventually, AI and I agreed: something was blocking the hot-water line behind the wall.
 
-So I asked the AI to find me a good local plumber. Apparently, I had reached the limits of my DIY career.
+AI's solution? **Open the wall.**
+
+My solution? Call a plumber.
 
 ## AI? No, Al.
 
-On the morning of the appointment, I got a voicemail. Instead of listening to it, I glanced at the transcript:
+On the morning of the appointment, I received a voicemail. I glanced at the transcript:
 
-> "Good morning, this is Al calling from Service One... I should be there in about 45 minutes."
+> "Good morning, this is Al calling from Service One..."
 
 I read **Al** as **AI**.
 
-In many fonts, a lowercase **l** looks exactly like an uppercase **I**. For a moment, I thought the plumbing company was using AI to make its appointment calls. I'd seen Google's AI make a restaurant reservation over the phone before, so it seemed entirely plausible.
+For a moment, I thought the plumbing company was using AI to make appointment calls. Perfectly plausible these days.
 
-Then it clicked. Not AI. Al. A real person.
+Then I realized: not AI. Al. A real person.
 
 I had already tried AI. What I needed was Al.
 
-*Side note:* Fortunately, the government has recently addressed this important source of confusion. Since September 2026, federal agencies have been instructed to say "Super Intelligence" (SI) instead of AI ([Executive Order 14434](https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/)). Problem solved. Nobody will ever mistake SI for Al. From here on, I will comply.
+*Fortunately, the federal government recently [ordered its agencies to call AI "SI"](https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/). Finally, someone addressing the important problem of confusing AI with Al.*
 
-## Al's Secret Weapon
+## Al vs. the Pipe
 
-Al started with the same suspicion SI had: maybe the cartridge?
+Al started with the same suspicion as AI: the cartridge. I explained that I had already replaced it. He suspected the replacement might also be defective, so he tried another one.
 
-I told him I had already replaced it. His reasoning was that the new one might be faulty too, and since the only alternative was opening the wall, we pursued. So he went to get a new cartridge, replaced it, tried also more flushing. But nothing worked. Something was stuck inside the hot-water line.
+Still nothing.
 
-I was mentally preparing to say goodbye to part of the bathroom wall.
+He flushed the line again. Nothing.
 
-But Al had another idea. He brought out a **kinetic water ram**, a tool that sends a sudden burst of compressed air through the pipe.
+I started mentally preparing to say goodbye to my bathroom wall.
 
-One blast, and the hot-water pressure came back. Voila!
+But Al had another idea: a **kinetic water ram**, a tool that sends a sudden burst of compressed air through the pipe.
 
-Except that a few moments later, the flow slowly faded again. Whatever was in there had moved, but it wasn't gone.
+One blast, and the hot water came rushing back!
 
-Instead of reaching for a saw, Al opened a pipe under the nearby sink and worked from different access points, using bursts of pressure to nudge the obstruction along, like a very patient game of pool played inside the plumbing.
+For about a minute.
 
-And finally, something popped out.
+Whatever was blocking the pipe had moved, but it wasn't gone.
 
-No walls cut. No tiles broken. Hot shower restored.
+Al didn't give up. He opened another access point under the nearby sink and worked from both ends, sending bursts of pressure through the pipes.
+
+Finally, something popped out.
+
+No walls opened. No tiles broken. Hot shower restored.
 
 ## The Culprit
 
-![A small, hard, round ball crusted with greenish-white mineral deposits, sitting on a US penny on a wooden table; it is slightly smaller than the coin.](/images/heat-trap-ball.jpg)
+![A small, hard, round ball covered in greenish-white mineral deposits, sitting on a penny.](/images/heat-trap-ball.jpg)
 
-It was a hard, round ball, a little smaller than a penny, covered in greenish-white deposits.
+A tiny, crusty ball. All that trouble for something smaller than a penny.
 
-Al thought it might be a lump of solder from the pipe joints.
+Al suspected a lump of solder. Naturally, I took a photo and asked AI.
 
-Naturally, I took a photo and asked SI.
+AI had another theory: a **heat trap ball**, a small component used in some water heaters to reduce heat loss.
 
-SI had a different theory: a **heat trap ball**, a small part inside some water-heater fittings that keeps hot water from slowly rising out of the tank into the pipes when no tap is open.
+I even found [a video](https://www.youtube.com/watch?v=rW_VreLc03c) showing a remarkably similar problem.
 
-Then I found [this video](https://www.youtube.com/watch?v=rW_VreLc03c) showing a heat trap ball causing almost exactly the same problem.
+So my leading theory is that this little ball escaped from our water heater, traveled through the pipes, and decided to settle in our shower. Quite an adventure for a plumbing component.
 
-I'm now fairly convinced that a little ball escaped from our water heater, traveled through the plumbing, and lodged itself in our shower line.
+## Einstein Had a Point
 
-## Knowledge and Know-How
+To be fair, AI was genuinely helpful. It guided my DIY attempts, helped narrow down the problem, and even found me a good plumber.
 
-To be fair, SI was genuinely helpful. It guided my DIY attempts, explained how the plumbing worked, helped narrow down the problem, and eventually found me a good plumber.
+But watching Al work was impressive. He knew when to abandon an approach, which tools to try, and how to improvise without destroying the bathroom.
 
-But what impressed me was Al's work. SI knew about cartridges, blockages, and plumbing repairs. Al knew those things too, but he also knew how to interpret what was happening, adapt his approach, and improvise with the tools he had.
+**AI knew what might be wrong. Al knew what to do when the obvious fixes didn't work.**
 
-A less experienced plumber might have cut into the wall, just as SI had suggested, and the repair could easily have cost much more. Al solved it without breaking a single tile.
+With all the discussion about which jobs AI will replace, I suspect experienced plumbers have little to worry about for a while.
 
-## Einstein was right
+Albert Einstein might have agreed.
 
-Everyone is asking which jobs AI will replace. There is something remarkable about combining knowledge, experience, physical skill, and creative problem-solving in the real world, and I suspect jobs like that will be among the last to be taken over by machines. Plumbing may be one of the most AI-proof careers there is.
+In 1954, he famously wrote that if he were young again, he would rather become a plumber or a peddler than a scientist.
 
-Einstein would have approved, although for a different reason. In November 1954, at the height of the McCarthy era, he wrote to *The Reporter* magazine:
+He was protesting political pressure on scientists during the McCarthy era, not predicting the future of AI ([read the fascinating story](https://www.ias.edu/ideas/2017/einstein-mccarthyism)).
 
-> "If I would be a young man again and had to decide how to make my living, I would not try to become a scientist or scholar or teacher. I would rather choose to be a plumber or a peddler in the hope to find that modest degree of independence still available under present circumstances."
+Still, after this experience, I think Einstein had a point.
 
-He was protesting political pressure on scientists and teachers, not predicting automation ([the story behind the letter](https://www.ias.edu/ideas/2017/einstein-mccarthyism)). Still, the independence he admired, the ability to diagnose and fix a real problem with your own hands, is exactly what I watched Al bring.
-
-If you live in the southwest suburbs of Chicago, I highly recommend Al at [Service 1 Plumbing, Heating & AC](https://www.service1heating.com/).
+And if you're in the southwest suburbs of Chicago, I highly recommend Al at [Service 1 Plumbing, Heating & AC](https://www.service1heating.com/).
 
 ---
 
 ### Comments
 
-If you have any comments, I would be glad to hear them: email me at [keceli@anl.gov](mailto:keceli@anl.gov).
+I'd be glad to hear your thoughts: [keceli@anl.gov](mailto:keceli@anl.gov).

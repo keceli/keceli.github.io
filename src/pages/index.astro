@@ -167,7 +167,7 @@ const pillarIcons: Record<string, string> = { quantum: 'atom', hpc: 'cpu', ai: '
         </div>
         <div class="stack">
           {posts.map((p) => (
-            <article class="card">
+            <article class:list={["card", p.data.font && `font-${p.data.font}`]}>
               <span class="small muted">{p.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' })}</span>
               <h3><a class="card-link" href={`/blog/${p.slug}/`}>{p.data.title}</a></h3>
               <p>{p.data.summary}</p>

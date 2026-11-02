@@ -1316,3 +1316,15 @@ a.tag-area:hover {
 .prose sup {
   font-size: 0.7em;
 }
+
+/* Per-post typeface: Atkinson Hyperlegible distinguishes capital I from lowercase l. */
+.font-hyperlegible,
+.font-hyperlegible h1,
+.font-hyperlegible h2,
+.font-hyperlegible h3,
+.font-hyperlegible h4,
+.font-hyperlegible p,
+.font-hyperlegible li,
+.font-hyperlegible blockquote {
+  font-family: "Atkinson Hyperlegible", var(--font-sans);
+}

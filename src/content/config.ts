@@ -122,6 +122,8 @@ const posts = defineCollection({
     tags: z.array(z.string()),
     draft: z.boolean().default(false),
     featured: z.boolean().default(false),
+    // Optional per-post typeface, e.g. 'hyperlegible' for text where I/l must be distinguishable.
+    font: z.enum(['hyperlegible']).optional(),
   }),
 });
 
