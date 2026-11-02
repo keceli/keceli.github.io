@@ -13,9 +13,9 @@ font: hyperlegible
 
 Our shower had a strange problem: plenty of cold water, barely any hot. Every other faucet in the house worked fine.
 
-I figured I could fix it myself. Mostly because I didn't want to pay a plumber. How hard could it be?
+I naively thought I could fix it myself and learn a skill that might be useful. How hard could it be?
 
-Armed with AI advice and YouTube tutorials, I began my plumbing career.
+Armed with AI advice and YouTube tutorials, I began my plumbing adventure.
 
 First, AI suggested replacing the cartridge. I didn't know what a cartridge was, but after several YouTube videos, I practically considered myself an expert. I bought the tools, struggled for hours, and finally replaced it.
 
@@ -25,11 +25,7 @@ Next suggestion: flush the line. I got thoroughly wet. The shower remained unimp
 
 A week later, I tried inspecting the pipe with a snake camera left over from a previous HVAC adventure. The pipe was too narrow. Another failure.
 
-Eventually, AI and I agreed: something was blocking the hot-water line behind the wall.
-
-AI's solution? **Open the wall.**
-
-My solution? Call a plumber.
+Eventually, AI and I agreed: something was blocking the hot-water line behind the wall and I should better call a plumber.
 
 ## AI? No, Al.
 
@@ -37,7 +33,7 @@ On the morning of the appointment, I received a voicemail. I glanced at the tran
 
 > "Good morning, this is Al calling from Service One..."
 
-I read **Al** as **AI**.
+I read **Al** as **AI**. (fonts that use the same charecter for capital "i" and small "L" should be banned!)
 
 For a moment, I thought the plumbing company was using AI to make appointment calls. Perfectly plausible these days.
 
@@ -45,7 +41,7 @@ Then I realized: not AI. Al. A real person.
 
 I had already tried AI. What I needed was Al.
 
-*Fortunately, the federal government recently [ordered its agencies to call AI "SI"](https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/). Finally, someone addressing the important problem of confusing AI with Al.*
+*Fortunately, the federal government recently [ordered its agencies to call AI "SI"](https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/). Another problem solved!*
 
 ## Al vs. the Pipe
 
@@ -75,15 +71,15 @@ No walls opened. No tiles broken. Hot shower restored.
 
 ![A small, hard, round ball covered in greenish-white mineral deposits, sitting on a penny.](/images/heat-trap-ball.jpg)
 
-A tiny, crusty ball. All that trouble for something smaller than a penny.
+A tiny, crusty ball. All that trouble for something with a diameter smaller than a penny.
 
-Al suspected a lump of solder. Naturally, I took a photo and asked AI.
+Al suspected a lump of solder, but the ball has a peculiar shape pointy at the front round at the back. Naturally, I took a photo and asked AI.
 
 AI had another theory: a **heat trap ball**, a small component used in some water heaters to reduce heat loss.
 
-I even found [a video](https://www.youtube.com/watch?v=rW_VreLc03c) showing a remarkably similar problem.
+It even found [a video](https://www.youtube.com/watch?v=rW_VreLc03c) showing a remarkably similar problem.
 
-So my leading theory is that this little ball escaped from our water heater, traveled through the pipes, and decided to settle in our shower. Quite an adventure for a plumbing component.
+So looks like this little ball escaped from our water heater, traveled through the pipes, and decided to settle in the shower line until rammed out by Al.
 
 ## Einstein Had a Point
 
@@ -93,7 +89,7 @@ But watching Al work was impressive. He knew when to abandon an approach, which 
 
 **AI knew what might be wrong. Al knew what to do when the obvious fixes didn't work.**
 
-With all the discussion about which jobs AI will replace, I suspect experienced plumbers have little to worry about for a while.
+With all the discussion about which jobs AI will replace, I suspect experienced plumbers and people who combine physical work with creative problem-solving skills have little to worry about for a while.
 
 Albert Einstein might have agreed.
 
